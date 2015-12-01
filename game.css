@@ -1,0 +1,22 @@
+body {
+  background-color: #161719;
+}
+
+h2, label, p {
+  font-family: courier;
+  color: #E8E9E8;
+  text-align: center;
+}
+
+.space {
+  background-color: #1F2124;
+  border: 1px solid #6A6C6C;
+}
+
+.human {
+  background-color: #B9BCB9;
+}
+
+.cpu {
+  background-color: #36383B;
+}
