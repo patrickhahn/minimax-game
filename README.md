@@ -2,6 +2,8 @@
 
 <h2>Guide to using git to work on this repository.</h2>
 
+https://xkcd.com/1597/
+
 The code in the repository is stored online by GitHub, but you will create a local copy of the repository on your machine to work on. Each time you start working on the project, you will manually download the changes that were pushed by other team members since your last session, and you will "commit" (save) and "push" (upload to main repository) whenever you have a significant change.
 
 <h3>1) Cloning the repository</h3>
