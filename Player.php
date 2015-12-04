@@ -90,6 +90,11 @@ class Player
 		return $this->password==$password;
 	      }
 
+            public function getPassword()
+            {
+                  return $this->password;
+            }
+
             public function updatePassword($oldPassword,$newPassword)
             {
                   if ($this->authenticate($oldPassword))
