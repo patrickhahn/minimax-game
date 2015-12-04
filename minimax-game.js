@@ -21,12 +21,9 @@ var Game = function(game_div) {
   this.width = 6;
   this.height = 6;
   this.killed = false;
+  this.player_turn = true;
 
   this.board = new Array(this.height);
-
-  this.player_turn = true;
-  this.player_score = 0;
-  this.cpu_score = 0;
 
   game_div.css({position: "relative",
                 width: this.width * Cell.WIDTH,
@@ -40,6 +37,9 @@ var Game = function(game_div) {
       game_div.append(cell.getCellDiv());
     }
   }
+
+  $("#playerscore").html(0);
+  $("#cpuscore").html(0);
 };
 
 Game.prototype.getCell = function (x, y) {
@@ -83,8 +83,8 @@ Game.prototype.update_score = function () {
     }
   }
 
-  this.player_score = p_score;
-  this.cpu_score = c_score;
+  $("#playerscore").html(p_score);
+  $("#cpuscore").html(c_score);
 };
 
 Game.prototype.cpu_move = function () {
@@ -109,6 +109,7 @@ Game.prototype.choose_cpu_move = function () {
       }
     }
   }
+
   // if there are no empty cells:
   return null;
 };
@@ -123,7 +124,6 @@ Game.prototype.kill = function () {
     this.killed = true;
   }
 };
-
 
 var Cell = function (game, x, y) {
   this.game = game;
