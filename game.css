@@ -83,6 +83,29 @@ h3 {
 
 		}
 
+#navbar a:hover {
+	//text-decoration: underline; 
+	font-style: italic; 
+}
+
+a:hover {
+	text-decoration: underline; 
+}
+		
+		
+#submitnew{
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		background-color: #39C5AC;
+			font-size: 16px;
+}
+
+#submituser{
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	background-color: #39C5AC;
+		font-size: 16px;
+}
+}		
+		
 #loginform {
 
 		float: right;
@@ -91,11 +114,13 @@ h3 {
 }
 
 #signupform{
-
-		float: left;
-		margin-right: 250px;
-		margin-left: 100px;
-		margin-top: 70px;
+	
+		float: left; 
+		margin-right: 250px; 
+		margin-left: 100px;	 
+		background-color: #EF5836;
+		border-radius: 25px;
+		
 }
 
 #ruleset{
