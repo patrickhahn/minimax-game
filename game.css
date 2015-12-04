@@ -10,9 +10,14 @@ h2, label, p {
   color: #161719;
 }
 
+.cell:not([class="claimed"]):hover{
+	background-color:white; 
+}
+
 #gameboard{
 	margin: auto; 
-	margin-top: 70px; 
+	margin-top: 70px;
+	top: 60px; 
 }
 
 .player {
@@ -26,10 +31,13 @@ h2, label, p {
 #stotts{
 	background-color: #EF5836;
 	margin-top: 70px; 
+ 
 } 
 
-#prasun{
+#dewan{
 	background-color: #39C5AC;
+	position: right; 
+		
 }
 
 .professor{
@@ -106,7 +114,7 @@ h3 {
 
 #navbar a:hover {
 	font-style: italic; 
-	color: #39C5AC
+	color: #39C5AC;
 }
 
 a:hover {
