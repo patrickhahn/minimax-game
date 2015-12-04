@@ -23,7 +23,6 @@ var Game = function(game_div) {
   this.killed = false;
 
   this.board = new Array(this.height);
-  this.new_board = new Array(this.height);
 
   this.player_turn = true;
   this.player_score = 0;
@@ -35,21 +34,85 @@ var Game = function(game_div) {
 
   for (var y = 0; y < this.height; y++) {
     this.board[y] = new Array(this.width);
-    this.new_board[y] = new Array(this.width);
     for (var x = 0; x < this.width; x++) {
       var cell = new Cell(this, x, y);
       this.board[y][x] = cell;
-      this.new_board[y][x] = 0;
       game_div.append(cell.getCellDiv());
     }
   }
 };
 
-Game.prototype.update = function (owner, x, y) {
+Game.prototype.getCell = function (x, y) {
+  return this.board[y][x];
+}
 
+Game.prototype.update = function (cell) {
+  // check neighboring cells for tile w/ same owner
+  var flip = false;
+  var neighbors = cell.getNeighbors();
+  console.log(neighbors);
+  for (var i = 0; i < neighbors.length; i++) {
+    if (neighbors[i].owner == cell.owner) {
+      flip = true;
+      break;
+    }
+  }
+
+  if (flip) {
+    for (var i = 0; i < neighbors.length; i++) {
+      if (neighbors[i].owner != cell.owner) {
+        neighbors[i].flip();
+      }
+    }
+  }
+
+  this.update_score();
+};
+
+Game.prototype.update_score = function () {
+  var p_score = 0;
+  var c_score = 0;
+
+  for (var y = 0; y < this.height; y++) {
+    for (var x = 0; x < this.width; x++) {
+      if (this.board[y][x].owner == own.PLAYER) {
+        p_score += this.board[y][x].value;
+      } else if (this.board[y][x].owner == own.CPU) {
+        c_score += this.board[y][x].value;
+      }
+    }
+  }
+
+  this.player_score = p_score;
+  this.cpu_score = c_score;
 };
 
 Game.prototype.cpu_move = function () {
+
+  var cell = this.choose_cpu_move();
+
+  if (cell != null) {
+    cell.set_owner(own.CPU);
+    this.update(cell);
+    this.player_turn = true;
+  } else {
+    game.finish();
+  }
+};
+
+Game.prototype.choose_cpu_move = function () {
+  for (var y = 0; y < this.height; y++) {
+    for (var x = 0; x < this.width; x++) {
+      if (this.board[y][x].owner == own.EMPTY) {
+        return this.board[y][x];
+      }
+    }
+  }
+  // if there are no empty cells:
+  return null;
+};
+
+Game.prototype.finish = function () {
 
 };
 
@@ -102,13 +165,12 @@ var own = {
 Cell.prototype.claim_for_player = function() {
   this.game.player_turn = false;
   this.set_owner(own.PLAYER);
-  this.game.update(own.PLAYER, this.x, this.y);
+  this.game.update(this);
   this.game.cpu_move();
 };
 
 Cell.prototype.set_owner = function(new_owner) {
   this.owner = new_owner;
-  console.log("set owner");
   if (new_owner == own.PLAYER) {
     this.cell_div.toggleClass('player',true);
     this.cell_div.toggleClass('cpu', false);
@@ -121,6 +183,33 @@ Cell.prototype.set_owner = function(new_owner) {
     this.cell_div.toggleClass('player',false);
     this.cell_div.toggleClass('cpu', false);
   }
+};
+
+Cell.prototype.flip = function() {
+  if (this.owner == own.PLAYER) {
+    this.set_owner(own.CPU);
+  }
+  else if (this.owner == own.CPU) {
+    this.set_owner(own.PLAYER);
+  }
+}
+
+Cell.prototype.getNeighbors = function() {
+  var neighbors = [];
+
+  if (this.x > 0) {
+    neighbors.push(this.game.getCell(this.x - 1, this.y));
+  }
+  if (this.x < this.game.width - 1) {
+    neighbors.push(this.game.getCell(this.x + 1, this.y));
+  }
+  if (this.y > 0) {
+    neighbors.push(this.game.getCell(this.x, this.y - 1));
+  }
+  if (this.y < this.game.height - 1) {
+    neighbors.push(this.game.getCell(this.x, this.y + 1));
+  }
+  return neighbors;
 };
 
 Cell.prototype.getCellDiv = function() {
