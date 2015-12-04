@@ -96,7 +96,7 @@ h3 {
 
 		font-size: 19px;
 
-		padding: 100px;
+		margin: 70px; 
 
 		color: #FDF5D6;
 
@@ -105,8 +105,8 @@ h3 {
 		}
 
 #navbar a:hover {
-	//text-decoration: underline; 
 	font-style: italic; 
+	color: #39C5AC
 }
 
 a:hover {
@@ -132,8 +132,6 @@ a:hover {
 		float: right; 
 		margin-top: 70px; 
 		background-color: #EF5836;
-		border-radius: 25px;
-		margin
 }
 
 #signupform{
@@ -141,9 +139,12 @@ a:hover {
 		float: left; 
 		margin-right: 250px; /*
 		margin-left: 100px;	*/  
-		background-color: #EF5836;
-		border-radius: 25px;
 		
+}
+
+.accountform{
+	background-color: #EF5836;
+		border-radius: 25px;
 }
 
 #ruleset{
