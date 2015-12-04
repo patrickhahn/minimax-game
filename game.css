@@ -4,7 +4,7 @@ body {
 
 h2, label, p {
   font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-  color: black; 
+  color: black;
   text-align: center;
 }
 
@@ -21,91 +21,87 @@ h2, label, p {
   background-color: #36383B;
 }
 
-
 h1{
-	text-align: left; 
-	
+	text-align: left;
+
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 body{
 	background-color: #FDF5D6;
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	margin: 5px; 
+	margin: 5px;
 }
 
 a {
 	text-decoration: none;
-	font-weight: bold; 
+	font-weight: bold;
 }
 
 h3 {
-	text-align: center; 
-	
+	text-align: center;
+
 }
 
-#navbar {				
+#navbar {
 		position: fixed;
-	
+
 		top: 30;
-			
-		background-color: #EF5836; 
-			 
+
+		background-color: #EF5836;
+
 		width: 99%;
-			
-		float: center; 
-		
-		clear: both; 
-			
-		text-align: center; 
-			
+
+		float: center;
+
+		clear: both;
+
+		text-align: center;
+
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-		
-		padding-bottom: 15px; 
-		
-		padding-top: 15px; 
-		
-		font-weight: bold; 
-		
+
+		padding-bottom: 15px;
+
+		padding-top: 15px;
+
+		font-weight: bold;
+
 		border-radius: 25px;
-	
+
       	 }
 
 #navbar a {
 
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-		
+
 		font-size: 19px;
-		
+
 		padding: 100px;
-					
-		color: #FDF5D6; 
+
+		color: #FDF5D6;
 
 		text-decoration: none;
 
 		}
 
 #loginform {
-	
-		float: right; 
-		margin-top: 70px; 
-	
+
+		float: right;
+		margin-top: 70px;
+
 }
 
 #signupform{
-	
-		float: left; 
-		margin-right: 250px; 
-		margin-left: 100px; 
-		margin-top: 70px; 
+
+		float: left;
+		margin-right: 250px;
+		margin-left: 100px;
+		margin-top: 70px;
 }
 
 #ruleset{
-	 background-color: #EF5836; 
-	 width: 300px; 
-	 text-align: left; 
+	 background-color: #EF5836;
+	 width: 300px;
+	 text-align: left;
 	 color:  #FDF5D6;
 	 border-radius: 25px;
 }
-
-
-
