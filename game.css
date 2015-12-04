@@ -10,8 +10,13 @@ h2, label, p {
   color: #161719;
 }
 
-.cell:not([class="claimed"]):hover{
+.cell:not(.claimed):hover{
 	background-color:white; 
+}
+
+h4 { 
+	padding-right: 50px;
+	float: right; 
 }
 
 #gameboard{
@@ -31,27 +36,33 @@ h2, label, p {
 #stotts{
 	background-color: #EF5836;
 	margin-top: 70px; 
- 
 } 
 
 #dewan{
-	background-color: #39C5AC;
-	position: right; 
-		
+	background-color: #39C5AC;  		
+}
+
+#baruah{
+	background-color: #EF5836; 
+}
+
+#singh{
+	background-color: #39C5AC; 
+}
+
+#bishop{
+	background-color: #EF5836; 
 }
 
 .professor{
-	width: 400px; 
+	width: 250px; 
 	border-radius: 25px;
 	padding-left: 15px;
 	padding-bottom: 15px
 }
 
-
-
 h1{
 	text-align: left;
-
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 
