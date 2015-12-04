@@ -6,7 +6,7 @@ class Ai
             private $type;
             private $name;
 
-            public static function create($depth,$type,$name)
+            /*public static function create($depth,$type,$name)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $result= $mysqli->query("insert into Ai values (0,". $depth.",". $type . ",". $name .")");
@@ -17,7 +17,7 @@ class Ai
                         return new Ai($new_id,$depth,$type,$name);
                   }
                   return null;
-            }
+            }*/
 
             public static function find_byID ($id)
             {

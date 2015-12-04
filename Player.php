@@ -90,5 +90,17 @@ class Player
 		return $this->password==$password;
 	      }
 
+            public function updatePassword($oldPassword,$newPassword)
+            {
+                  if ($this->authenticate($oldPassword))
+                  {
+                              $this->password=$newPassword;
+                              $result = $mysqli->query("update Player set password = " . $this->password . " where id = " . $this->id);
+                              return $result;
+                  }
+                  else
+                  return false;
+            }
+
 }
 ?>
