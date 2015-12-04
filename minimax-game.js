@@ -92,6 +92,7 @@ Game.prototype.cpu_move = function () {
   var cell = this.choose_cpu_move();
 
   if (cell != null) {
+    cell.cell_div.toggleClass('claimed', true);
     cell.set_owner(own.CPU);
     this.update(cell);
     this.player_turn = true;
@@ -164,6 +165,7 @@ var own = {
 
 Cell.prototype.claim_for_player = function() {
   this.game.player_turn = false;
+  this.cell_div.toggleClass('claimed', true);
   this.set_owner(own.PLAYER);
   this.game.update(this);
   this.game.cpu_move();

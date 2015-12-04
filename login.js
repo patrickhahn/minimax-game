@@ -1,9 +1,10 @@
 $(document).ready(function() {
   var current_game = new Game($('#gameboard'));
 
-  $("#reset").click(function(e) {
+  $("#submitnew").click(function(e) {
     e.preventDefault();
-    reset_game();
+    var username = $("#newUsername").val();
+    var password = $("#newPassword").val();
   });
 
   var reset_game = function() {
