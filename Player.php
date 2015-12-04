@@ -5,10 +5,10 @@ class Player
             private $username;
             private $password;
 
-            public static function create($username,$password)
+            private static function create($username,$password)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result= $mysqli->query("insert into Player values (0,". $username.",". $password .")");
+                  $result= $mysqli->query(mysqli_real_escape_string("insert into Player values (0,". $username.",". $password .")"));
 
                   if ($result)
                   {
@@ -21,7 +21,7 @@ class Player
             public static function find_byID ($id)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query("select * from Player where id = " . $id);
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where id = " . $id));
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -68,6 +68,28 @@ class Player
 		return $players;
 	}
 
+            public static function login($username,$password)
+            {
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username . " and password = " . $password));
+                  if($result->num_rows==0)
+                  {
+                        return null;
+                  }
+                  return Player::findByID($next_row[0]);
+            }
+
+            public static function signUp($username,$password)
+            {
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username . " and password = " . $password));
+                  if($result->num_rows==0)
+                  {
+                        return Player::create($username,$password);
+                  }
+                  return null
+            }
+
             private function __construct($id, $username, $passowrd)
             {
                   $this->id = $id;
@@ -89,6 +111,11 @@ class Player
             {
 		return $this->password==$password;
 	      }
+
+            public function login($username,$password)
+            {
+
+            }
 
             public function getPassword()
             {
