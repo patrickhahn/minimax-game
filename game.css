@@ -3,7 +3,7 @@ body {
 }
 
 h2, label, p {
-  font-family: courier;
+  font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   color: #E8E9E8;
   text-align: center;
 }
@@ -19,4 +19,73 @@ h2, label, p {
 
 .cpu {
   background-color: #36383B;
+}
+
+
+h1{
+	text-align: left; 
+	
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+body{
+	background-color: #FDF5D6;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	margin: 5px; 
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold; 
+}
+
+#navbar {				
+		position: fixed;
+	
+		top: 30;
+			
+		background-color: #EF5836; 
+			 
+		width: 99%;
+			
+		float: center; 
+		
+		clear: both; 
+			
+		text-align: center; 
+			
+		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		
+		padding-bottom: 15px; 
+		
+		padding-top: 15px; 
+		
+		font-weight: bold; 
+	
+      	 }
+
+#navbar a {
+
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		
+		font-size: 19px;
+		
+		padding: 100px;
+					
+		color: #FDF5D6; 
+
+		text-decoration: none;
+
+		}
+
+#loginform {
+	
+		float: right; 
+		font-color: black; 
+	
+}
+
+#signupform{
+	
+		float: left; 
+		font-color: black; 
 }
