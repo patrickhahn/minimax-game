@@ -8,7 +8,7 @@ class Ai
 
             public static function create($depth,$type,$name)
             {
-                  $mysqli= new mysqli(/*NEED TO DO*/);
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $result= $mysqli->query("insert into Ai values (0,". $depth.",". $type . ",". $name .")");
 
                   if ($result)
@@ -21,7 +21,7 @@ class Ai
 
             public static function find_byID ($id)
             {
-                  $mysqli= new mysqli(/*NEED TO DO*/);
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $result = $mysqli->query("select * from Ai where id = " . $id);
                   if($result)
                   {
@@ -52,7 +52,7 @@ class Ai
 			}
 			$direction = "ASC";
 		}
-            $mysqli = new mysqli(/*NEED TO DO*/);
+            $mysqli = new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
 		$result = $mysqli->query("select id from Ai order by id " . $direction);
 		$ais = array();
 

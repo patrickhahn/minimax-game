@@ -7,8 +7,8 @@ class Player
 
             public static function create($username,$password)
             {
-                  $mysqli= new mysqli(/*NEED TO DO*/);
-                  $result= $mysqli->query("insert into Players values (0,". $username.",". $password .")");
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result= $mysqli->query("insert into Player values (0,". $username.",". $password .")");
 
                   if ($result)
                   {
@@ -20,8 +20,8 @@ class Player
 
             public static function find_byID ($id)
             {
-                  $mysqli= new mysqli(/*NEED TO DO*/);
-                  $result = $mysqli->query("select * from Players where id = " . $id);
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result = $mysqli->query("select * from Player where id = " . $id);
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -50,8 +50,8 @@ class Player
 			}
 			$direction = "ASC";
 		}
-            $mysqli = new mysqli(/*NEED TO DO*/);
-		$result = $mysqli->query("select id from Players order by id " . $direction);
+            $mysqli = new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+		$result = $mysqli->query("select id from Player order by id " . $direction);
 		$players = array();
 
 		if ($result) {

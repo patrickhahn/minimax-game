@@ -9,8 +9,8 @@ class Game
 
             public static function create($player,$ai,$playerScore,$aiScore)
             {
-                  $mysqli= new mysqli(/*NEED TO DO*/);
-                  $result= $mysqli->query("insert into Games values (0,". $player.",". $ai .",". $playerScore .",". $aiScore .")");
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result= $mysqli->query("insert into Game values (0,". $player.",". $ai .",". $playerScore .",". $aiScore .")");
 
                   if ($result)
                   {
@@ -22,8 +22,8 @@ class Game
 
             public static function find_byID ($id)
             {
-                  $mysqli= new mysqli(/*NEED TO DO*/);
-                  $result = $mysqli->query("select * from Games where id = " . $id);
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result = $mysqli->query("select * from Game where id = " . $id);
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -54,7 +54,7 @@ class Game
 			}
 			$direction = "ASC";
 		}
-            $mysqli = new mysqli(/*NEED TO DO*/);
+            $mysqli = new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
 		$result = $mysqli->query("select id from Games order by id " . $direction);
 		$games = array();
 
