@@ -1,10 +1,6 @@
 $(document).ready(function() {
   var current_game = new Game($('#gameboard'));
 
-  var update = function() {
-    current_game.update();
-  };
-
   $("#reset").click(function(e) {
     e.preventDefault();
     reset_game();
@@ -25,8 +21,13 @@ var Game = function(game_div) {
   this.width = 6;
   this.height = 6;
   this.killed = false;
+
   this.board = new Array(this.height);
   this.new_board = new Array(this.height);
+
+  this.player_turn = true;
+  this.player_score = 0;
+  this.cpu_score = 0;
 
   game_div.css({position: "relative",
                 width: this.width * Cell.WIDTH,
@@ -44,16 +45,12 @@ var Game = function(game_div) {
   }
 };
 
-Game.prototype.update = function () {
+Game.prototype.update = function (owner, x, y) {
 
 };
 
-Game.prototype.start = function() {
-  this.running = true;
-};
+Game.prototype.cpu_move = function () {
 
-Game.prototype.stop = function() {
-  this.running = false;
 };
 
 Game.prototype.kill = function () {
@@ -86,8 +83,8 @@ var Cell = function (game, x, y) {
 
   this.cell_div.click(function (e) {
     e.preventDefault();
-    if (e.button == 0) {
-
+    if (e.button == 0 && cell.game.player_turn && cell.owner == own.EMPTY) {
+      cell.claim_for_player();
     }
   });
 };
@@ -102,8 +99,28 @@ var own = {
   CPU: 2
 };
 
-Cell.prototype.flip = function() {
+Cell.prototype.claim_for_player = function() {
+  this.game.player_turn = false;
+  this.set_owner(own.PLAYER);
+  this.game.update(own.PLAYER, this.x, this.y);
+  this.game.cpu_move();
+};
 
+Cell.prototype.set_owner = function(new_owner) {
+  this.owner = new_owner;
+  console.log("set owner");
+  if (new_owner == own.PLAYER) {
+    this.cell_div.toggleClass('player',true);
+    this.cell_div.toggleClass('cpu', false);
+  }
+  else if (new_owner == own.CPU) {
+    this.cell_div.toggleClass('player',false);
+    this.cell_div.toggleClass('cpu', true);
+  }
+  else {
+    this.cell_div.toggleClass('player',false);
+    this.cell_div.toggleClass('cpu', false);
+  }
 };
 
 Cell.prototype.getCellDiv = function() {
