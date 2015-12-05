@@ -49,4 +49,4 @@ var MoveUtilityPair = function(move, utility) {
   // move is a Cell
   this.move = move;
   this.utility = utility;
-}
+};
