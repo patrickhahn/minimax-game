@@ -4,6 +4,10 @@ h2, label, p {
   text-align: center;
 }
 
+h1{
+	margin-left: 33px; 
+}
+
 .cell { 
   background-color: #white;
   border: 1px solid #6A6C6C;
@@ -34,31 +38,55 @@ h4 {
 }
 
 #stotts{
-	background-color: #EF5836;
+	background-color: #AB47BC;
 	margin-top: 70px; 
+	position: relative;
+	float: left; 
+	margin-left: 50px;
 } 
 
 #dewan{
-	background-color: #39C5AC;  		
+	background-color: #39C5AC;;  
+	float: right; 
+	margin-right: 50px; 
+	position: relative; 
+	margin-top: 70px; 
 }
 
 #baruah{
-	background-color: #EF5836; 
+	background-color: #39C5AC; 
+	float: left; 
+	margin: 50px; 
+	position: relative; 
+	clear: both;
 }
 
 #singh{
-	background-color: #39C5AC; 
+	background-color: #AB47BC; 
+	float: right; 
+	margin: 50px; 
+	position: relative; 
 }
 
 #bishop{
-	background-color: #EF5836; 
+	background-color: #AB47BC; 
+	float: left; 
+	margin: 50px; 
+	position: relative; 
+	clear: both; 
 }
 
 .professor{
-	width: 250px; 
+	width: 30%; 
 	border-radius: 25px;
 	padding-left: 15px;
-	padding-bottom: 15px
+	padding-bottom: 15px;
+}
+
+.professor:hover{
+	position: relative; 
+    top: -5px;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 h1{
@@ -85,11 +113,11 @@ h3 {
 
 #navbar {				
 	
-		top: 30;
+		top: 30; 
 
 		background-color: #EF5836;
 
-		width: 99%;
+		width: 97%;
 
 		float: center;
 
@@ -106,6 +134,8 @@ h3 {
 		font-weight: bold;
 
 		border-radius: 25px;
+		
+		margin: auto; 
 
       	 }
 
@@ -147,23 +177,21 @@ a:hover {
 }		
 		
 #loginform {
-	
+		position: relative; 
 		float: right; 
-		margin-top: 70px; 
-		background-color: #EF5836;
+		padding: 20px;
 }
 
 #signupform{
-	
-		float: left; 
-		margin-right: 250px; /*
-		margin-left: 100px;	*/  
+		position: relative; 
+		float: left;	
+		padding: 20px; 
 		
 }
 
 .accountform{
 	background-color: #EF5836;
-		border-radius: 25px;
+	border-radius: 25px;
 }
 
 #ruleset{
@@ -173,3 +201,4 @@ a:hover {
 	 color:  #FDF5D6;
 	 border-radius: 25px;
 }
+
