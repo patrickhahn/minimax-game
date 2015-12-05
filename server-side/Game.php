@@ -71,6 +71,35 @@ class Game
 		}
 		return $games;
 	}
+            public static function findByUserID($userId)
+            {
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result = $mysqli->query("select * from Game where playerId = " . $userId);
+                  $games = array();
+                  do{
+      			$next_row = $result->fetch_row();
+      				if ($next_row) {
+      					$games[] = Game::findByID($next_row[0]);
+      				}
+      			}while($next_row);
+
+      		return $games;
+            }
+
+            public static function findByAiID($aiId)
+            {
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result = $mysqli->query("select * from Game where aiId = " . $aiId);
+                  $games = array();
+                  do{
+      			$next_row = $result->fetch_row();
+      				if ($next_row) {
+      					$games[] = Game::findByID($next_row[0]);
+      				}
+      			}while($next_row);
+
+      		return $games;
+            }
 
             private function __construct($id, $player, $ai, $playerScore, $aiScore)
             {
