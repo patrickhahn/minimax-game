@@ -23,7 +23,7 @@ class Game
             public static function find_byID ($id)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query("select * from Game where id = " . $id);
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Game where id = " . $id));
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -55,7 +55,7 @@ class Game
 			$direction = "ASC";
 		}
             $mysqli = new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-		$result = $mysqli->query("select id from Games order by id " . $direction);
+		$result = $mysqli->query(mysqli_real_escape_string("select id from Games order by id " . $direction));
 		$games = array();
 
 		if ($result) {
@@ -74,7 +74,7 @@ class Game
             public static function findByUserID($userId)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query("select * from Game where playerId = " . $userId);
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Game where playerId = " . $userId));
                   $games = array();
                   do{
       			$next_row = $result->fetch_row();
@@ -89,7 +89,7 @@ class Game
             public static function findByAiID($aiId)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query("select * from Game where aiId = " . $aiId);
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Game where aiId = " . $aiId));
                   $games = array();
                   do{
       			$next_row = $result->fetch_row();
