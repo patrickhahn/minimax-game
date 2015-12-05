@@ -81,7 +81,7 @@ class Game
       				if ($next_row) {
       					$games[] = Game::findByID($next_row[0]);
       				}
-      			}while($next_row);
+      		}while($next_row);
 
       		return $games;
             }
@@ -96,7 +96,7 @@ class Game
       				if ($next_row) {
       					$games[] = Game::findByID($next_row[0]);
       				}
-      			}while($next_row);
+      		}while($next_row);
 
       		return $games;
             }

@@ -36,6 +36,24 @@ class Player
                   return null;
             }
 
+            public static function findByUsername ($username)
+            {
+                  $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username));
+                  if($result)
+                  {
+                        if ($result->num_rows == 0)
+                        {
+				return null;
+			      }
+			$player_info = $result->fetch_array();
+			return new Player($player_info['id'],
+					      $player_info['username'],
+					      $player_info['password']);
+                  }
+                  return null;
+            }
+
             public static function getRange($start, $end) {
 		if ($start < 0) {
 			if ($end > $start) {
