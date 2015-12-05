@@ -4,7 +4,7 @@ var MinimaxAgent = function(depth) {
 
 MinimaxAgent.prototype.chooseMove = function(board) {
   // returns cell where the CPU agent should move
-  var node = new Node(board);
+  var node = new Node(board, own.CPU, Node.getEmptyCells());
   var move_utility = this.minimax(node, own.CPU, this.depth);
   return move_utility.move;
 };
