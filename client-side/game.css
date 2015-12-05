@@ -5,8 +5,93 @@ h2, label, p {
 }
 
 h1{
-	margin-left: 33px; 
+	text-align: left;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	
 }
+
+h2{
+	clear: both; 
+}
+
+
+h3 {
+	text-align: center;
+
+}
+
+
+h4 { 
+	padding-right: 50px;
+	float: right; 
+}
+
+body{
+	background-color: #E8EAF6;
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	margin: 5px;
+}
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+
+a:hover {
+	text-decoration: underline; 
+}
+	
+#header{
+	margin-left: 33px; 
+	top: 0px; 
+	width:100%;
+	position: fixed; 
+	z-index: 9999; 
+	background-color: #E8EAF6;
+}
+
+#topbar{
+	background-color: #E8EAF6;
+}
+
+#navbar {	
+		position: fixed; 
+		background-color: #303f9f;
+		top:70px;
+		left:0; 
+		width: 100%;
+		text-align: center;
+		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		padding-bottom: 15px;
+		padding-top: 15px;
+		font-weight: bold;
+		margin: auto; 
+		/*box-shadow: 3px 3px 10px #BEBEBE;*/
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+		z-index:9999;
+
+      	 }
+
+#navbar a {
+
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+
+		font-size: 19px;
+
+		margin: 70px; 
+
+		color: white;
+
+		text-decoration: none;
+
+		}
+
+#navbar a:hover {
+	font-style: italic; 
+	color: #FF4081; 
+}
+
 
 .cell { 
   background-color: #white;
@@ -18,10 +103,6 @@ h1{
 	background-color:white; 
 }
 
-h4 { 
-	padding-right: 50px;
-	float: right; 
-}
 
 #gameboard{
 	margin: auto; 
@@ -37,24 +118,21 @@ h4 {
   background-color: #36383B;
 }
 
-#stotts{
-	background-color: #AB47BC;
-	margin-top: 70px; 
+/*#stotts{
+	margin-top: 200px; 
 	position: relative;
 	float: left; 
-	margin-left: 50px;
+	margin-left: 70px;
 } 
 
-#dewan{
-	background-color: #39C5AC;;  
+#dewan{ 
 	float: right; 
-	margin-right: 50px; 
+	margin-right: 70px; 
 	position: relative; 
-	margin-top: 70px; 
-}
+	margin-top: 200px; 
+} 
 
-#baruah{
-	background-color: #39C5AC; 
+#baruah{ 
 	float: left; 
 	margin: 50px; 
 	position: relative; 
@@ -62,20 +140,35 @@ h4 {
 }
 
 #singh{
-	background-color: #AB47BC; 
 	float: right; 
 	margin: 50px; 
 	position: relative; 
 }
 
 #bishop{
-	background-color: #AB47BC; 
 	float: left; 
 	margin: 50px; 
 	position: relative; 
 	clear: both; 
 }
+ */
+.leftprof{
+	background-color: #C5CAE9;
+	margin-top: 200px; 
+	position: relative;
+	float: left; 
+	margin-left: 70px;
+	clear:both; 
+}
 
+.rightprof{
+	background-color: #FF80AB; 
+	float: right; 
+	margin-right: 70px; 
+	position: relative; 
+	margin-top: 200px; 
+	clear:both; 
+}
 .professor{
 	width: 30%; 
 	border-radius: 25px;
@@ -88,80 +181,7 @@ h4 {
     top: -5px;
 	box-shadow: 10px 10px 5px #888888;
 }
-
-h1{
-	text-align: left;
-	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-}
-
-body{
-	background-color: #FDF5D6;
-	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	margin: 5px;
-}
-
-a {
-	text-decoration: none;
-	font-weight: bold;
-}
-
-h3 {
-	text-align: center;
-
-}
-
-
-#navbar {				
 	
-		top: 30; 
-
-		background-color: #EF5836;
-
-		width: 97%;
-
-		float: center;
-
-		clear: both;
-
-		text-align: center;
-
-		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-
-		padding-bottom: 15px;
-
-		padding-top: 15px;
-
-		font-weight: bold;
-
-		border-radius: 25px;
-		
-		margin: auto; 
-
-      	 }
-
-#navbar a {
-
-		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-
-		font-size: 19px;
-
-		margin: 70px; 
-
-		color: #FDF5D6;
-
-		text-decoration: none;
-
-		}
-
-#navbar a:hover {
-	font-style: italic; 
-	color: #39C5AC;
-}
-
-a:hover {
-	text-decoration: underline; 
-}
-		
 		
 #submitnew{
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
