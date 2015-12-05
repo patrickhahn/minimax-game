@@ -5,6 +5,8 @@ $(document).ready(function() {
     e.preventDefault();
     var username = $("#newUsername").val();
     var password = $("#newPassword").val();
+
+    
   });
 
   var reset_game = function() {
