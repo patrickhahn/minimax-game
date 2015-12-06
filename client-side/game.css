@@ -7,23 +7,28 @@ h2, label, p {
 h1{
 	text-align: left;
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-	
+	opacity: 0.87;
 }
 
 h2{
 	clear: both; 
 }
 
-
 h3 {
-	text-align: center;
-
+	text-align: left;
+	float: right; 
+	position: relative; 
+	padding-right: 50px;
+	font-size: 20px;
+	opacity: 0.87;
 }
 
-
 h4 { 
-	padding-right: 50px;
-	float: right; 
+
+	clear: both; 
+	text-align: left;
+	font-size: 19px;
+	opacity: 0.54;
 }
 
 body{
@@ -37,11 +42,117 @@ a {
 	font-weight: bold;
 }
 
-
 a:hover {
 	text-decoration: underline; 
 }
-	
+
+.titles{
+	float:left;
+	padding-left: 15px; 
+	margin-top: 0; 
+}
+
+.image{
+  margin-top: 15px;  
+  width: 100px;
+  float: left; 
+  position: relative; 
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.6);
+  border-radius: 10px;
+  margin-bottom: 5px; 
+}
+
+#stotts{
+	  background: url(http://cs.sites.unc.edu/files/2013/12/stotts.jpeg); 
+	  height: 150px; 
+	  background-size:cover;
+	  background-repeat: no-repeat; 
+}
+
+#dewan{
+	background: url(http://www.cs.unc.edu/~dewan/index_files/image002.jpg);
+	height: 150px;
+	background-size:cover;
+	background-repeat: no-repeat; 
+}
+
+#baruah{
+	background: url(https://www.cs.unc.edu/~baruah/Pics/2009baruah1.jpg);
+	height: 150px;
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+
+#singh{
+	background: url(https://www.cs.unc.edu/~montek/images/100_5473.JPG);
+	height: 150px;
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+
+#bishop{
+	background: url(http://www.cs.unc.edu/~gb/media/gb.png);
+	height: 150px;
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+
+#pozefsky{
+	background: url(http://www.americas.datafest.net/_/rsrc/1384653839266/about/awards/D_Pozefsky.png);
+	height: 150px;
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+
+#fuchs{
+	background: url(http://www.cs.unc.edu/~fuchs//fuchs2011c.jpg);
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#lastra{
+	background: url(http://cs.sites.unc.edu/files/2013/12/lastra.jpeg);
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#jeffay{
+	background: url(http://cs.unc.edu/files/2013/12/jeffay_kevin_cropped1-e1446652966504-wpcf_120x176.png);
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#turing{
+	background: url(https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg);
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#brooks{
+	background: url(http://www.cs.unc.edu/Events/News/VirtuousReality/brooks1.jpg); 
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#kmp{
+	background: url(http://cs.sites.unc.edu/files/2013/12/Mayer-patel.jpeg);
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#topokmp{
+	background-image: url(topokmp.gif);
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 #header{
 	margin-left: 33px; 
 	top: 0px; 
@@ -67,7 +178,6 @@ a:hover {
 		padding-top: 15px;
 		font-weight: bold;
 		margin: auto; 
-		/*box-shadow: 3px 3px 10px #BEBEBE;*/
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 		z-index:9999;
 
@@ -76,20 +186,16 @@ a:hover {
 #navbar a {
 
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-
 		font-size: 19px;
-
 		margin: 70px; 
-
 		color: white;
-
 		text-decoration: none;
 
 		}
 
 #navbar a:hover {
 	font-style: italic; 
-	color: #FF4081; 
+	color: #C5CAE9; 
 }
 
 
@@ -117,69 +223,57 @@ a:hover {
 .cpu {
   background-color: #36383B;
 }
-
-/*#stotts{
-	margin-top: 200px; 
-	position: relative;
-	float: left; 
-	margin-left: 70px;
-} 
-
-#dewan{ 
-	float: right; 
-	margin-right: 70px; 
-	position: relative; 
-	margin-top: 200px; 
-} 
-
-#baruah{ 
-	float: left; 
-	margin: 50px; 
-	position: relative; 
-	clear: both;
-}
-
-#singh{
-	float: right; 
-	margin: 50px; 
-	position: relative; 
-}
-
-#bishop{
-	float: left; 
-	margin: 50px; 
-	position: relative; 
-	clear: both; 
-}
- */
+ 
+ .topprof{
+	 margin-top: 180px; 
+ }
+ 
+ .lowerprof{
+	 margin-top: 35px;
+ }
+ 
 .leftprof{
-	background-color: #C5CAE9;
-	margin-top: 200px; 
 	position: relative;
 	float: left; 
-	margin-left: 70px;
-	clear:both; 
+	margin-left: 120px;
+	clear:both;	
 }
 
-.rightprof{
-	background-color: #FF80AB; 
+.rightprof{ 
 	float: right; 
-	margin-right: 70px; 
+	margin-right: 120px; 
 	position: relative; 
-	margin-top: 200px; 
-	clear:both; 
-}
-.professor{
-	width: 30%; 
-	border-radius: 25px;
-	padding-left: 15px;
-	padding-bottom: 15px;
 }
 
-.professor:hover{
+.centerprof{
+	position: relative;
+	float: left; 
+	margin-top: 35px;
+	margin-left: 30%;
+	margin-right: 30%; 
+	margin-bottom: 100px;  
+}
+
+.professor{
+	width:350px;
+	height: 180px; 
+	border-radius: 10px;
+	padding-left: 15px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
+}
+
+.pinkprof{
+	background-color: #FF80AB;
+}
+
+.blueprof{
+	background-color: #C5CAE9;
+}
+
+.professor:active{
 	position: relative; 
-    top: -5px;
-	box-shadow: 10px 10px 5px #888888;
+    top: +5px;
+	box-shadow: none; 
 }
 	
 		
@@ -211,14 +305,15 @@ a:hover {
 
 .accountform{
 	background-color: #EF5836;
-	border-radius: 25px;
+	border-radius: 10px;
 }
 
 #ruleset{
+	 margin-top: 200px; 
 	 background-color: #EF5836;
 	 width: 300px;
 	 text-align: left;
-	 color:  #FDF5D6;
-	 border-radius: 25px;
+	 background-color: #FF80AB; 
+	 border-radius: 10px;
 }
 
