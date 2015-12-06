@@ -130,12 +130,8 @@ class Player
 		return $this->password==$password;
 	      }
 
-            public function login($username,$password)
-            {
 
-            }
-
-            public function getPassword()
+            private function getPassword()
             {
                   return $this->password;
             }

@@ -71,33 +71,67 @@ class Game
 		}
 		return $games;
 	}
-            public static function findByUserID($userId)
+            public static function findByUserID($start, $end, $userId)
             {
+                  if ($start < 0) {
+      			if ($end > $start) {
+      				return null;
+      			}
+      			$direction = "DESC";
+      			$start *= -1;
+      			$end *= -1;
+      		} else {
+      			if ($end < $start) {
+      				return null;
+      			}
+      			$direction = "ASC";
+      		}
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $result = $mysqli->query(mysqli_real_escape_string("select * from Game where playerId = " . $userId));
                   $games = array();
-                  do{
-      			$next_row = $result->fetch_row();
+                  if ($result) {
+      			for ($i=1; $i<$start; $i++) {
+      				$result->fetch_row();
+      			}
+      			for ($i=$start; $i<=$end; $i++) {
+      				$next_row = $result->fetch_row();
       				if ($next_row) {
       					$games[] = Game::findByID($next_row[0]);
       				}
-      		}while($next_row);
-
+      			}
+      		}
       		return $games;
             }
 
-            public static function findByAiID($aiId)
+            public static function findByAiID($start, $end, $aiId)
             {
+                  if ($start < 0) {
+      			if ($end > $start) {
+      				return null;
+      			}
+      			$direction = "DESC";
+      			$start *= -1;
+      			$end *= -1;
+      		} else {
+      			if ($end < $start) {
+      				return null;
+      			}
+      			$direction = "ASC";
+      		}
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $result = $mysqli->query(mysqli_real_escape_string("select * from Game where aiId = " . $aiId));
                   $games = array();
-                  do{
-      			$next_row = $result->fetch_row();
+                  if ($result) {
+      			for ($i=1; $i<$start; $i++) {
+      				$result->fetch_row();
+      			}
+      			for ($i=$start; $i<=$end; $i++) {
+      				$next_row = $result->fetch_row();
       				if ($next_row) {
       					$games[] = Game::findByID($next_row[0]);
       				}
-      		}while($next_row);
-
+      			}
+      		}
       		return $games;
             }
 
