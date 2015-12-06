@@ -11,21 +11,21 @@ h1{
 }
 
 h2{
-	clear: both; 
+	clear: both;
 }
 
 h3 {
 	text-align: left;
-	float: right; 
-	position: relative; 
+	float: right;
+	position: relative;
 	padding-right: 50px;
 	font-size: 20px;
 	opacity: 0.87;
 }
 
-h4 { 
+h4 {
 
-	clear: both; 
+	clear: both;
 	text-align: left;
 	font-size: 19px;
 	opacity: 0.54;
@@ -43,23 +43,23 @@ a {
 }
 
 a:hover {
-	text-decoration: underline; 
+	text-decoration: underline;
 }
 
 h5{
-	text-align: left; 
-	font-size: 14; 
+	text-align: left;
+	font-size: 14;
 	color: black;
 }
 
-		
+
 /* nav bar*/
 #header{
-	margin-left: 25px; 
-	top: 0px; 
+	margin-left: 25px;
+	top: 0px;
 	width:100%;
-	position: fixed; 
-	z-index: 9999; 
+	position: fixed;
+	z-index: 9999;
 	background-color: #E8EAF6;
 }
 
@@ -67,18 +67,18 @@ h5{
 	background-color: #E8EAF6;
 }
 
-#navbar {	
-		position: fixed; 
+#navbar {
+		position: fixed;
 		background-color: #303f9f;
 		top:70px;
-		left:0; 
+		left:0;
 		width: 100%;
 		text-align: center;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		padding-bottom: 15px;
 		padding-top: 15px;
 		font-weight: bold;
-		margin: auto; 
+		margin: auto;
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 		z-index:9999;
 
@@ -88,22 +88,22 @@ h5{
 
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		font-size: 19px;
-		margin: 70px; 
+		margin: 70px;
 		color: white;
 		text-decoration: none;
 
 		}
 
 #navbar a:hover {
-	font-style: italic; 
-	color: #C5CAE9; 
+	font-style: italic;
+	color: #C5CAE9;
 }
 
-	
+
 
 /* gameboard */
 
-.cell { 
+.cell {
   background-color: #9FA8DA;
   border: 1px solid #E8EAF6;
   color: white;
@@ -111,14 +111,14 @@ h5{
 }
 
 .cell:not(.claimed):hover{
-	background-color:#C5CAE9; 
+	background-color:#C5CAE9;
 	cursor: pointer;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
 	z-index:9999;
 }
 
 #gameboard{
-	margin: auto; 
+	margin: auto;
 	position: relative;
 	top: 155px;
 	margin-bottom: 100px;
@@ -126,21 +126,21 @@ h5{
 }
 
 #pscore{
-	text-align: left; 
-	float: left; 
+	text-align: left;
+	float: left;
 	margin-left: 8px;
-	margin-top: 3px; 
+	margin-top: 3px;
 }
 
 #cscore{
-	text-align: right; 	
-	float: right; 
-	margin-right: 8px; 
-	margin-top: 3px; 
+	text-align: right;
+	float: right;
+	margin-right: 8px;
+	margin-top: 3px;
 }
 
 #scores{
-	margin: auto; 
+	margin: auto;
 	background-color: #ff4081;
 	position: relative;
 	top: 155px;
@@ -157,22 +157,22 @@ h5{
 .cpu {
   background-color: #EC407A;
 }
- 
 
-/* professor bubbles for New Game page */ 
+
+/* professor bubbles for New Game page */
 
 #stotts{
-	  background: url(http://cs.sites.unc.edu/files/2013/12/stotts.jpeg); 
-	  height: 150px; 
+	  background: url(http://cs.sites.unc.edu/files/2013/12/stotts.jpeg);
+	  height: 150px;
 	  background-size:cover;
-	  background-repeat: no-repeat; 
+	  background-repeat: no-repeat;
 }
 
 #dewan{
 	background: url(http://www.cs.unc.edu/~dewan/index_files/image002.jpg);
 	height: 150px;
 	background-size:cover;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 }
 
 #baruah{
@@ -232,7 +232,7 @@ h5{
 }
 
 #brooks{
-	background: url(http://www.cs.unc.edu/Events/News/VirtuousReality/brooks1.jpg); 
+	background: url(http://www.cs.unc.edu/Events/News/VirtuousReality/brooks1.jpg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -253,38 +253,38 @@ h5{
 }
 
  .topprof{
-	 margin-top: 180px; 
+	 margin-top: 180px;
  }
- 
+
  .lowerprof{
 	 margin-top: 35px;
  }
- 
+
 .leftprof{
 	position: relative;
-	float: left; 
+	float: left;
 	margin-left: 120px;
-	clear:both;	
+	clear:both;
 }
 
-.rightprof{ 
-	float: right; 
-	margin-right: 120px; 
-	position: relative; 
+.rightprof{
+	float: right;
+	margin-right: 120px;
+	position: relative;
 }
 
 .centerprof{
-	top: 35px; 
-	clear: both; 
-	position: relative; 
+	top: 35px;
+	clear: both;
+	position: relative;
 	margin-left: auto;
-	margin-right: auto; 
-	margin-bottom: 100px;  
+	margin-right: auto;
+	margin-bottom: 100px;
 }
 
 .professor{
 	width:350px;
-	height: 180px; 
+	height: 180px;
 	border-radius: 10px;
 	padding-left: 15px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
@@ -311,26 +311,26 @@ h5{
 }
 
 .professor:active{
-	position: relative; 
+	position: relative;
     top: +5px;
-	box-shadow: none; 
+	box-shadow: none;
 }
 
 .titles{
 	float:left;
-	padding-left: 15px; 
-	margin-top: 0; 
+	padding-left: 15px;
+	margin-top: 0;
 }
 
 .image{
-  margin-top: 15px;  
+  margin-top: 15px;
   width: 100px;
-  float: left; 
-  position: relative; 
+  float: left;
+  position: relative;
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.6);
   border-radius: 10px;
-  margin-bottom: 5px; 
-}		
+  margin-bottom: 5px;
+}
 
 #submitnew{
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
@@ -343,19 +343,19 @@ h5{
 	background-color: #39C5AC;
 		font-size: 16px;
 }
-}		
-		
+}
+
 #loginform {
-		position: relative; 
-		float: right; 
+		position: relative;
+		float: right;
 		padding: 20px;
 }
 
 #signupform{
-		position: relative; 
-		float: left;	
-		padding: 20px; 
-		
+		position: relative;
+		float: left;
+		padding: 20px;
+
 }
 
 .accountform{
@@ -364,11 +364,10 @@ h5{
 }
 
 #ruleset{
-	 margin-top: 200px; 
+	 margin-top: 200px;
 	 background-color: #EF5836;
 	 width: 300px;
 	 text-align: left;
-	 background-color: #FF80AB; 
+	 background-color: #FF80AB;
 	 border-radius: 10px;
 }
-

@@ -1,20 +1,23 @@
 $(document).ready(function() {
-  var current_game = new Game($('#gameboard'));
+  var url_base = "../../server-side/";
 
   $("#submitnew").click(function(e) {
     e.preventDefault();
     var username = $("#newUsername").val();
     var password = $("#newPassword").val();
 
-    
+    $.ajax(url_base + "session.php",
+	         {type: "POST",
+		              dataType: "json",
+                  data: $(this).serialize(),
+		              success: function(todo_ids, status, jqXHR) {
+		                for (var i=0; i<todo_ids.length; i++) {
+			                oad_todo_item(todo_ids[i]);
+		                }
+		              }
+	         });
   });
 
-  var reset_game = function() {
-    if (current_game != null) {
-      current_game.kill();
-    }
-
-    current_game = new Game($('#gameboard'));
   };
 
 });
