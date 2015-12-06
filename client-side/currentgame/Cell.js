@@ -37,8 +37,8 @@ var Cell = function (game, x, y) {
   });
 };
 
-Cell.WIDTH = 50;
-Cell.HEIGHT = 50;
+Cell.WIDTH = 65;
+Cell.HEIGHT = 65;
 
 Cell.prototype.claim_for_player = function() {
   this.game.player_turn = false;

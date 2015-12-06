@@ -46,21 +46,120 @@ a:hover {
 	text-decoration: underline; 
 }
 
-.titles{
-	float:left;
-	padding-left: 15px; 
-	margin-top: 0; 
+h5{
+	text-align: left; 
+	font-size: 14; 
+	color: black;
 }
 
-.image{
-  margin-top: 15px;  
-  width: 100px;
-  float: left; 
-  position: relative; 
-  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.6);
-  border-radius: 10px;
-  margin-bottom: 5px; 
+		
+/* nav bar*/
+#header{
+	margin-left: 25px; 
+	top: 0px; 
+	width:100%;
+	position: fixed; 
+	z-index: 9999; 
+	background-color: #E8EAF6;
 }
+
+#topbar{
+	background-color: #E8EAF6;
+}
+
+#navbar {	
+		position: fixed; 
+		background-color: #303f9f;
+		top:70px;
+		left:0; 
+		width: 100%;
+		text-align: center;
+		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		padding-bottom: 15px;
+		padding-top: 15px;
+		font-weight: bold;
+		margin: auto; 
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+		z-index:9999;
+
+      	 }
+
+#navbar a {
+
+		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+		font-size: 19px;
+		margin: 70px; 
+		color: white;
+		text-decoration: none;
+
+		}
+
+#navbar a:hover {
+	font-style: italic; 
+	color: #C5CAE9; 
+}
+
+	
+
+/* gameboard */
+
+.cell { 
+  background-color: #9FA8DA;
+  border: 1px solid #E8EAF6;
+  color: white;
+  opacity: .87;
+}
+
+.cell:not(.claimed):hover{
+	background-color:#C5CAE9; 
+	cursor: pointer;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+	z-index:9999;
+}
+
+#gameboard{
+	margin: auto; 
+	position: relative;
+	top: 155px;
+	margin-bottom: 100px;
+
+}
+
+#pscore{
+	text-align: left; 
+	float: left; 
+	margin-left: 8px;
+	margin-top: 3px; 
+}
+
+#cscore{
+	text-align: right; 	
+	float: right; 
+	margin-right: 8px; 
+	margin-top: 3px; 
+}
+
+#scores{
+	margin: auto; 
+	background-color: #ff4081;
+	position: relative;
+	top: 155px;
+	width: 390px;
+	height: 30px;
+	opacity: .87;
+
+}
+
+.player {
+  background-color: #5c6bc0;
+}
+
+.cpu {
+  background-color: #EC407A;
+}
+ 
+
+/* professor bubbles for New Game page */ 
 
 #stotts{
 	  background: url(http://cs.sites.unc.edu/files/2013/12/stotts.jpeg); 
@@ -153,77 +252,6 @@ a:hover {
 	background-repeat: no-repeat;
 }
 
-#header{
-	margin-left: 33px; 
-	top: 0px; 
-	width:100%;
-	position: fixed; 
-	z-index: 9999; 
-	background-color: #E8EAF6;
-}
-
-#topbar{
-	background-color: #E8EAF6;
-}
-
-#navbar {	
-		position: fixed; 
-		background-color: #303f9f;
-		top:70px;
-		left:0; 
-		width: 100%;
-		text-align: center;
-		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-		padding-bottom: 15px;
-		padding-top: 15px;
-		font-weight: bold;
-		margin: auto; 
-		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-		z-index:9999;
-
-      	 }
-
-#navbar a {
-
-		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-		font-size: 19px;
-		margin: 70px; 
-		color: white;
-		text-decoration: none;
-
-		}
-
-#navbar a:hover {
-	font-style: italic; 
-	color: #C5CAE9; 
-}
-
-
-.cell { 
-  background-color: #white;
-  border: 1px solid #6A6C6C;
-  color: #161719;
-}
-
-.cell:not(.claimed):hover{
-	background-color:white; 
-}
-
-
-#gameboard{
-	margin: auto; 
-	margin-top: 70px;
-	top: 60px; 
-}
-
-.player {
-  background-color: #B9BCB9;
-}
-
-.cpu {
-  background-color: #36383B;
-}
- 
  .topprof{
 	 margin-top: 180px; 
  }
@@ -246,11 +274,11 @@ a:hover {
 }
 
 .centerprof{
-	position: relative;
-	float: left; 
-	margin-top: 35px;
-	margin-left: 30%;
-	margin-right: 30%; 
+	top: 35px; 
+	clear: both; 
+	position: relative; 
+	margin-left: auto;
+	margin-right: auto; 
 	margin-bottom: 100px;  
 }
 
@@ -262,12 +290,24 @@ a:hover {
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
 }
 
+.professor:hover{
+	cursor: pointer;
+}
+
 .pinkprof{
 	background-color: #FF80AB;
 }
 
+.pinkprof:hover{
+	background-color: #ff92b7;
+}
+
 .blueprof{
 	background-color: #C5CAE9;
+}
+
+.blueprof:hover{
+	background-color: #d0d4ea;
 }
 
 .professor:active{
@@ -275,8 +315,23 @@ a:hover {
     top: +5px;
 	box-shadow: none; 
 }
-	
-		
+
+.titles{
+	float:left;
+	padding-left: 15px; 
+	margin-top: 0; 
+}
+
+.image{
+  margin-top: 15px;  
+  width: 100px;
+  float: left; 
+  position: relative; 
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.6);
+  border-radius: 10px;
+  margin-bottom: 5px; 
+}		
+
 #submitnew{
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		background-color: #39C5AC;
