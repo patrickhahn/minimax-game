@@ -31,6 +31,11 @@ h4 {
 	opacity: 0.54;
 }
 
+h5{
+	font-size: 10;
+	text-align: left;
+	color: white;  
+}
 body{
 	background-color: #E8EAF6;
 	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
@@ -104,14 +109,15 @@ h5{
 /* gameboard */
 
 .cell {
-  background-color: #9FA8DA;
+  background-color:  #b5bce3;
   border: 1px solid #E8EAF6;
   color: white;
   opacity: .87;
+  font-weight:bold;
 }
 
 .cell:not(.claimed):hover{
-	background-color:#C5CAE9;
+	background-color: #c8ccea;
 	cursor: pointer;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
 	z-index:9999;
@@ -125,33 +131,32 @@ h5{
 
 }
 
-#pscore{
+#playerscore{
 	text-align: left;
 	float: left;
 	margin-left: 8px;
-	margin-top: 3px;
+	margin-top: 4px;
 }
-
-#cscore{
+	
+#cpuscore{
 	text-align: right;
 	float: right;
+	margin-top: 4px;
 	margin-right: 8px;
-	margin-top: 3px;
 }
 
 #scores{
 	margin: auto;
-	background-color: #ff4081;
+	background-color: #303f9f;
 	position: relative;
 	top: 155px;
 	width: 390px;
 	height: 30px;
-	opacity: .87;
-
+	color: white;
 }
 
 .player {
-  background-color: #5c6bc0;
+  background-color: #7986CB;
 }
 
 .cpu {
@@ -315,6 +320,7 @@ h5{
     top: +5px;
 	box-shadow: none;
 }
+
 
 .titles{
 	float:left;

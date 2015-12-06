@@ -45,8 +45,8 @@ var Game = function(game_div, agent) {
     }
   }
 
-  $("#playerscore").html(0);
-  $("#cpuscore").html(0);
+  $("#playerscore").html("You: " + 0);
+  $("#cpuscore").html("CPU: " + 0);
 };
 
 Game.prototype.getCell = function (x, y) {
@@ -89,8 +89,8 @@ Game.prototype.update_score = function () {
     }
   }
 
-  $("#playerscore").html(p_score);
-  $("#cpuscore").html(c_score);
+  $("#playerscore").html("You: " + p_score);
+  $("#cpuscore").html("CPU: " + c_score);
 };
 
 Game.prototype.cpu_move = function () {
