@@ -1,5 +1,5 @@
 var Node = function (board, turn, empty) {
-  this.board = board;
+  this.board = Node.copyBoard(board);
   this.turn = turn;
   this.empty_cells = empty;
 };
@@ -7,7 +7,7 @@ var Node = function (board, turn, empty) {
 Node.prototype.getScore = function (owner) {
   var score = 0;
   for (var i = 0; i < this.board.length; i++) {
-      for (int j = 0; j < this.board[0].length; j++) {
+      for (var j = 0; j < this.board[0].length; j++) {
           if (board[i][j].owner == owner) {
               score += board[i][j].value;
           }
@@ -21,11 +21,11 @@ Node.prototype.getUtility = function () {
   var utility = 0;
   for (var i = 0; i < this.board.length; i++) {
     for (var j = 0; j < this.board[0].length; j++) {
-      if (board[i][j].owner == own.CPU) {
-        utility += board[i][j].value;
+      if (this.board[i][j].owner == own.CPU) {
+        utility += this.board[i][j].value;
       }
-      else if (board[i][j].owner == own.PLAYER) {
-        utility -= board[i][j].value;
+      else if (this.board[i][j].owner == own.PLAYER) {
+        utility -= this.board[i][j].value;
       }
     }
   }
@@ -136,35 +136,35 @@ Node.prototype.getDistance2Neighbors = function (point) {
   var distance2neighbors = [];
 
   if (x > 0 && y > 0) {
-      distance2neighbors.push(new Point(x - 1, y - 1));
+    distance2neighbors.push(new Point(x - 1, y - 1));
   }
   if (x > 0 && y + 1 < this.board.length) {
-      distance2neighbors.push(new Point(x - 1, y + 1));
+    distance2neighbors.push(new Point(x - 1, y + 1));
   }
   if (x + 1 < this.board[0].length && y > 0) {
-      distance2neighbors.push(new Point(x + 1, y - 1));
+    distance2neighbors.push(new Point(x + 1, y - 1));
   }
   if (x + 1 < this.board[0].length && y + 1 < this.board.length) {
-      distance2neighbors.push(new Point(x + 1, y + 1));
+    distance2neighbors.push(new Point(x + 1, y + 1));
   }
   if (x - 2 >= 0) {
-      distance2neighbors.push(new Point(x - 2, y));
+    distance2neighbors.push(new Point(x - 2, y));
   }
   if (x + 2 < this.board[0].length) {
-      distance2neighbors.push(new Point(x + 2, y));
+    distance2neighbors.push(new Point(x + 2, y));
   }
   if (y - 2 >= 0) {
-      distance2neighbors.push(new Point(x, y - 2));
+    distance2neighbors.push(new Point(x, y - 2));
   }
   if (y + 2 < this.board.length) {
-      distance2neighbors.push(new Point(x, y + 2));
+    distance2neighbors.push(new Point(x, y + 2));
   }
   return distance2neighbors;
 };
 
 // Returns true if the state is a terminal state
 Node.prototype.isTerminal = function () {
-    return empty_cells == 0;
+    return this.empty_cells == 0;
 };
 
 Node.prototype.getPossibleMoves = function () {
@@ -173,8 +173,7 @@ Node.prototype.getPossibleMoves = function () {
   for (var i = 0; i < this.board.length; i++) {
     for (var j = 0; j < this.board[0].length; j++) {
       if (this.board[i][j].owner == own.EMPTY) {
-        var move = this.board[i][j];
-        move.owner = this.turn;
+        var move = new Cell(this.board[i][j].game, this.board[i][j].x, this.board[i][j].y);
         moves.push(move);
       }
     }
@@ -184,7 +183,7 @@ Node.prototype.getPossibleMoves = function () {
 
 Node.prototype.transition = function (move) {
   var next_turn = (this.turn == own.CPU ? own.PLAYER : own.CPU);
-  var new_board = this.board;
+  var new_board = Node.copyBoard(this.board);
 
   new_board[move.y][move.x] = move;
 
@@ -210,7 +209,7 @@ Node.prototype.update = function (move) {
   if (has_adjacent_friendly) {
     for (var i = 0; i < neighbors.length; i++) {
       if (this.board[neighbors[i].y][neighbors[i].x].owner != own.EMPTY) {
-        board[neighbors[i].y][neighbors[i].x].owner = mover;
+        this.board[neighbors[i].y][neighbors[i].x].owner = mover;
       }
     }
   }
@@ -229,6 +228,20 @@ Node.getEmptyCells = function (board) {
   }
   return empty;
 };
+
+Node.copyBoard = function (board) {
+  var copy = new Array(board.length);
+
+  for (var y = 0; y < board.length; y++) {
+    copy[y] = new Array(board[0].length);
+    for (var x = 0; x < board[0].length; x++) {
+      var cell = new Cell(null, x, y);
+      cell.owner = board[y][x].owner;
+      copy[y][x] = cell;
+    }
+  }
+  return copy;
+}
 
 var Point = function (x, y) {
   this.x = x;

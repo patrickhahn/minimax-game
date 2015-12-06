@@ -1,5 +1,12 @@
+// Enum for cell ownership status
+var own = {
+  EMPTY: 0,
+  PLAYER: 1,
+  CPU: 2
+};
+
 $(document).ready(function() {
-  var current_game = new Game($('#gameboard'), new MinimaxAgent(3));
+  var current_game = new Game($('#gameboard'), new MinimaxAgent(2));
 
   $("#reset").click(function(e) {
     e.preventDefault();
@@ -13,7 +20,6 @@ $(document).ready(function() {
 
     current_game = new Game($('#gameboard'));
   };
-
 });
 
 var Game = function(game_div, agent) {
@@ -51,7 +57,6 @@ Game.prototype.update = function (cell) {
   // check neighboring cells for tile w/ same owner
   var flip = false;
   var neighbors = cell.getNeighbors();
-  console.log(neighbors);
   for (var i = 0; i < neighbors.length; i++) {
     if (neighbors[i].owner == cell.owner) {
       flip = true;
@@ -89,8 +94,8 @@ Game.prototype.update_score = function () {
 };
 
 Game.prototype.cpu_move = function () {
-
-  var cell = this.choose_cpu_move();
+  var move = this.choose_cpu_move();
+  cell = this.board[move.y][move.x];
 
   if (cell != null) {
     cell.cell_div.toggleClass('claimed', true);
@@ -98,22 +103,13 @@ Game.prototype.cpu_move = function () {
     this.update(cell);
     this.player_turn = true;
   } else {
-    game.finish();
+    this.finish();
   }
 };
 
 Game.prototype.choose_cpu_move = function () {
-  return this.agent.chooseMove();
-  // for (var y = 0; y < this.height; y++) {
-  //   for (var x = 0; x < this.width; x++) {
-  //     if (this.board[y][x].owner == own.EMPTY) {
-  //       return this.board[y][x];
-  //     }
-  //   }
-  // }
-
-  // if there are no empty cells:
-  return null;
+  var move = this.agent.chooseMove(this.board);
+  return move;
 };
 
 Game.prototype.finish = function () {
