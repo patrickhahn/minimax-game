@@ -105,7 +105,7 @@ class Player
                   {
                         return Player::create($username,$password);
                   }
-                  return null
+                  return null;
             }
 
             private function __construct($id, $username, $passowrd)
