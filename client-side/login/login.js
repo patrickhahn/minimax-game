@@ -6,14 +6,15 @@ $(document).ready(function() {
     var username = $("#newUsername").val();
     var password = $("#newPassword").val();
 
-    $.ajax(url_base + "/signUp/" + username + "/" + password,
+    $.ajax(url_base + "/login/" + username + "/" + password,
 	         {type: "POST",
-		              dataType: "json",
 		              success: function(player, status, jqXHR) {
 		                console.log(player);
 		              },
                   error: function(jqHXR, status, error) {
-                    console.log("error");
+                    console.log(jqHXR);
+                    console.log(status);
+                    console.log(error);
                   }
 	         });
   });

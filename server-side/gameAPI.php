@@ -34,7 +34,7 @@ class gameAPI extends API
             return null;
 
      }
-     
+
      protected function leaderBoard() {
         if ($this->method == 'GET') {
              if (Game::getRange(1,50)!=null)
