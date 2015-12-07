@@ -31,7 +31,7 @@ class gameAPI extends API
             if (Player::signUp($username,$passowrd)!=null)
                  return Player::signUp($username,$passowrd);
       }
-            return null;
+            return new Player(-1, null, null);
 
      }
 
