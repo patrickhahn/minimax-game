@@ -8,8 +8,10 @@ class Player
             private static function create($username,$password)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result= $mysqli->query(mysqli_real_escape_string("insert into Player values (0,". $username.",". $password .")"));
 
+                 $mysqli->real_escape_string($username);
+                 $mysqli->real_escape_string($password);
+                  $result= $mysqli->query("insert into Player values (0,'". $username."','". $password ."')");
                   if ($result)
                   {
                         $new_id = $mysqli->insert_id;
@@ -89,7 +91,9 @@ class Player
             public static function login($username,$password)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username . " and password = " . $password));
+                  $mysqli->real_escape_string($username);
+                 $mysqli->real_escape_string($password);
+                  $result = $mysqli->query("select * from Player where username = " . $username . " and password = " . $password);
                   if($result->num_rows==0)
                   {
                         return null;
@@ -99,8 +103,11 @@ class Player
 
             public static function signUp($username,$password)
             {
+
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username));
+                  $mysqli->real_escape_string($username);
+                 $mysqli->real_escape_string($password);
+                  $result = $mysqli->query("select * from Player where username = " . $username);
                   if($result->num_rows==0)
                   {
                         return Player::create($username,$password);
