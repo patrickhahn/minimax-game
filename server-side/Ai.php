@@ -41,7 +41,8 @@ class Ai
             public static function findByName ($name)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Ai where name = " . $name));
+                  $name=$mysqli->real_escape_string($name);
+                  $result = $mysqli->query("select * from Ai where name = " . $name));
                   if($result)
                   {
                         if ($result->num_rows == 0)
