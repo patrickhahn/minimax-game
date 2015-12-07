@@ -100,7 +100,7 @@ class Player
             public static function signUp($username,$password)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username . " and password = " . $password));
+                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username));
                   if($result->num_rows==0)
                   {
                         return Player::create($username,$password);
