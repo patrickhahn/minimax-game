@@ -6,7 +6,7 @@ var own = {
 };
 
 $(document).ready(function() {
-  var current_game = new Game($('#gameboard'), new MinimaxAgent(1));
+  var current_game = new Game($('#gameboard'), new AlphaBetaAgent(2));
 
   $("#reset").click(function(e) {
     e.preventDefault();
