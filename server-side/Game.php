@@ -10,6 +10,10 @@ class Game
             public static function create($player,$ai,$playerScore,$aiScore)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
+                  $player=$mysqli->real_escape_string($player);
+                  $ai=$mysqli->real_escape_string($ai);
+                  $playerScore=$mysqli->real_escape_string($playerScore);
+                  $aiScore=$mysqli->real_escape_string($aiScore);
                   $result= $mysqli->query("insert into Game values (0,". $player.",". $ai .",". $playerScore .",". $aiScore .")");
 
                   if ($result)
@@ -23,7 +27,8 @@ class Game
             public static function find_byID ($id)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Game where id = " . $id));
+                  $id=$mysqli->real_escape_string($id);
+                  $result = $mysqli->query("select * from Game where id = " . $id);
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -55,7 +60,7 @@ class Game
 			$direction = "ASC";
 		}
             $mysqli = new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-		$result = $mysqli->query(mysqli_real_escape_string("select id from Games order by id " . $direction));
+		$result = $mysqli->query("select id from Games order by id " . $direction);
 		$games = array();
 
 		if ($result) {
@@ -87,7 +92,8 @@ class Game
       			$direction = "ASC";
       		}
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Game where playerId = " . $userId));
+                  $userId=$mysqli->real_escape_string($userId);
+                  $result = $mysqli->query("select * from Game where playerId = " . $userId);
                   $games = array();
                   if ($result) {
       			for ($i=1; $i<$start; $i++) {
@@ -119,7 +125,8 @@ class Game
       			$direction = "ASC";
       		}
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Game where aiId = " . $aiId));
+                  $aiId=$mysqli->real_escape_string($aiId);
+                  $result = $mysqli->query("select * from Game where aiId = " . $aiId);
                   $games = array();
                   if ($result) {
       			for ($i=1; $i<$start; $i++) {

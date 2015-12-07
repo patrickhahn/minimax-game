@@ -23,7 +23,8 @@ class Player
             public static function find_byID ($id)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where id = " . $id));
+                  $id=$mysqli->real_escape_string($id);
+                  $result = $mysqli->query("select * from Player where id = " . $id);
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -41,7 +42,8 @@ class Player
             public static function findByUsername ($username)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-                  $result = $mysqli->query(mysqli_real_escape_string("select * from Player where username = " . $username));
+                  $username=$mysqli->real_escape_string($username);
+                  $result = $mysqli->query("select * from Player where username = " . $username);
                   if($result)
                   {
                         if ($result->num_rows == 0)
