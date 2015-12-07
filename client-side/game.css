@@ -132,6 +132,13 @@ h5{
 	cursor:  pointer;
 }
 
+.submit:active{
+	box-shadow: none;
+}
+
+.submit:focus{outline:0;
+}
+
 input{
 	margin-top: 20px;
 	border-radius: 10px; 

@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var url_base = "../server-side/gameAPI.php";
 
-  $("#submitnew").click(function(e) {
+ $("#submitnew").click(function(e) {
     e.preventDefault();
     var username = $("#newUsername").val();
     var password = $("#newPassword").val();
