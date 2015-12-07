@@ -8,9 +8,8 @@ $(document).ready(function() {
 
     $.ajax(url_base + "/login/" + username + "/" + password,
 	         {type: "POST",
-                  dataType: "json",
 		              success: function(player, status, jqXHR) {
-		                console.log(player);
+		                console.log(player.id);
 		              },
                   error: function(jqHXR, status, error) {
                     console.log(jqHXR);

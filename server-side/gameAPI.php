@@ -23,16 +23,23 @@ class gameAPI extends API
      }
      protected function login($username,$password) {
         if ($this->method == 'GET') {
-             if (Player::login($username,$passowrd)!=null)
-                  return Player::login($username,$passowrd);
-            }
-      else if ($this->method == 'POST')
-      {
-            if (Player::signUp($username,$passowrd)!=null)
-                 return Player::signUp($username,$passowrd);
-      }
+          if (Player::login($username,$passowrd)!=null) {
+            return Player::login($username,$passowrd);
+          }
+          else {
             return new Player(-1, null, null);
-
+          }
+        }
+        else if ($this->method == 'POST') {
+          if (Player::signUp($username,$passowrd)!=null) {
+            print ("signup not null\n");
+            return Player::signUp($username,$passowrd);
+          }
+          else {
+            return new Player(-1, null, null);
+            print ("signup was null\n");
+          }
+        }
      }
 
      protected function leaderBoard() {
