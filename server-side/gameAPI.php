@@ -26,17 +26,15 @@ class gameAPI extends API
              if (Player::login($username,$passowrd)!=null)
                   return Player::login($username,$passowrd);
             }
+      else if ($this->method == 'POST')
+      {
+            if (Player::signUp($username,$passowrd)!=null)
+                 return Player::signUp($username,$passowrd);
+      }
             return null;
 
      }
-     protected function signUp($username,$password) {
-        if ($this->method == 'GET') {
-             if (Player::signUp($username,$passowrd)!=null)
-                  return Player::signUp($username,$passowrd);
-            }
-            return null;
-
-     }
+     
      protected function leaderBoard() {
         if ($this->method == 'GET') {
              if (Game::getRange(1,50)!=null)
