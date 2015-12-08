@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
            	exit();
             }
 
-        if ($path_components[1] == "login")
+        if ($path_components[1] == "game")
         {
               $username=$path_components[2];
               $password=$path_components[3];
