@@ -110,7 +110,7 @@ class Player
                   $mysqli->real_escape_string($username);
                  $mysqli->real_escape_string($password);
                   $result = $mysqli->query("select * from Player where username = " . $username);
-                  if($result->num_rows==0)
+                  if($result->num_rows===0)
                   {
                         return Player::create($username,$password);
                   }
