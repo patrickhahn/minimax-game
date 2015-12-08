@@ -1,15 +1,10 @@
 $(document).ready(function() {
   var url_base = "../server-side/";
 
- $("#submitnew").click(function(e) {
+  $("#submitnew").click(function(e) {
     e.preventDefault();
     var username = $("#newUsername").val();
     var password = $("#newPassword").val();
-
-    // just using this to test the loginPlayer functionality.
-    // comment this out when you test the ajax request and once the ajax
-    // is actually working
-    loginPlayer(url_base, username, password);
 
     $.ajax(url_base + "login/" + username + "/" + password,
 	         {type: "POST",
@@ -27,12 +22,13 @@ $(document).ready(function() {
 	         });
     });
 
+    loginPlayer(url_base, username, password);
 });
 
 var loginPlayer = function (url_base, username, password) {
 
   $.ajax(url_base + "session.php/login",
-         {type: "PUT",
+         {type: "GET",
                 success: function(result, status, jqXHR) {
                   console.log(result);
                 },

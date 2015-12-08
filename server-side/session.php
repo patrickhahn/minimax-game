@@ -9,7 +9,14 @@ $path_components = explode('/', $_SERVER['PATH_INFO']);
 
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
   // return session state
+  header("HTTP/1.0 404 Not Found");
+  print("path components, 1: " . $path_components[1] . " 2: " . $path_components[2] . " 3: " . $path_components[3]);
+  exit();
 
+  // update session state
+  if ((count($path_components) >= 2) && ($path_components[1] == "login")) {
+
+  }
 } else if ($_SERVER['REQUEST_METHOD'] == "PUT") {
   header("HTTP/1.0 404 Not Found");
   print("path components, 1: " . $path_components[1] . " 2: " . $path_components[2] . " 3: " . $path_components[3]);
