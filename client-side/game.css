@@ -278,6 +278,7 @@ li{
 .playerdiv{
 	position: relative;
 	float: left;
+	clear: left;
 	background-color:#C5CAE9;
 	top:250px; 
 	margin-left: 20px;
@@ -295,15 +296,18 @@ li{
 	margin-top: 0;
 }
 
-
-.proftitles{
-	color: #EC407A;
+#playerturn{
+	color: white; 
+	position: relative;
+	top: 70px;
 }
 
-.playergametitles {
-	color:  #7986CB; 
-	
+#profstatus{
+	color: white; 
+	position: relative;
+	top: 22px;
 }
+
 .class{
 	float: right; 
 	position: relative;
@@ -459,7 +463,7 @@ li{
 }
 
 #frosh{
-	background-image:url(nerd.jpg);
+	background-image:url(http://www.socialmemegenerator.com/wp-content/uploads/2015/09/college-freshman-meme-300x300.jpg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
