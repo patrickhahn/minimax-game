@@ -8,10 +8,13 @@ $(document).ready(function() {
 
     $.ajax(url_base + "login/" + username + "/" + password,
 	         {type: "POST",
+                  dataType: "json",
 		              success: function(player, status, jqXHR) {
-		                console.log(player);
+		                console.log(player.id);
                     if (player.id > -1) {
                       loginPlayer(player.username, player.password);
+                    } else {
+                      console.log("Player id <= -1 or did not exist");
                     }
 		              },
                   error: function(jqHXR, status, error) {

@@ -110,27 +110,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
       if ((count($path_components) >= 2) &&
           ($path_components[1] != "")) {
 
-      if ($path_components[1] == "login")
-      {
-            $username=$path_components[2];
-            $password=$path_components[3];
-            $result=Player::signUp($username,$password);
-            if ($result!=null) {
-              header("Content-type: application/json");
-              print(json_encode($result));
-              exit();
-            }
-            else {
-            header("HTTP/1.0 400 Bad Request");
-           	print("Username is already taken");
-           	exit();
-            }
-
-        if ($path_components[1] == "game")
+        if ($path_components[1] == "login")
         {
               $username=$path_components[2];
               $password=$path_components[3];
-              if ($reult=Player::signUp($username,$password)!=null) {
+              $result=Player::signUp($username,$password);
+              if ($result!=null) {
                 header("Content-type: application/json");
                 print(json_encode($result));
                 exit();
@@ -141,7 +126,23 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
              	exit();
               }
         }
+        if ($path_components[1] == "game")
+        {
+                $username=$path_components[2];
+                $password=$path_components[3];
+                $result=Player::signUp($username,$password);
+                if ($result!=null) {
+                  header("Content-type: application/json");
+                  print(json_encode($result));
+                  exit();
+                }
+                else {
+                header("HTTP/1.0 400 Bad Request");
+               	print("Username is already taken");
+               	exit();
+                }
 
+        }
       }
 }
 ?>
