@@ -21,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             {
                   $username=$path_components[2];
                   $password=$path_components[3];
-                  if ($result=Player::login($username,$passowrd)!=null) {
+                  $result=Player::login($username,$passowrd);
+                  if ($result!=null) {
                     header("Content-type: application/json");
                     print(json_encode($result));
                     exit();
@@ -35,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             if ($path_components[1] == "ai")
             {
                   $name=$path_components[2];
-                  if ($result=Ai::findByName($name)!=null){
+                  $result=Ai::findByName($name);
+                  if ($result!=null){
                        header("Content-type: application/json");
                        print(json_encode($result));
                        exit();
@@ -52,7 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                   {
                         $start=$path_components[3];
                         $end=$path_components[4];
-                        if ($result=Game::getRange($start,$end)!=null){
+                        $result=Game::getRange($start,$end);
+                        if ($result!=null){
                              header("Content-type: application/json");
                             print(json_encode($result));
                             exit();
@@ -69,7 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                               $start=$path_components[4];
                               $end=$path_components[5];
                               $id=Player::findByUsername($name)->getID();
-                              if ($result=Game::findByUserID($start,$end,$id)!=null){
+                              $result=Game::findByUserID($start,$end,$id);
+                              if ($result!=null){
                                    header("Content-type: application/json");
                                   print(json_encode($result));
                                   exit();
@@ -86,7 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                                     $start=$path_components[4];
                                     $end=$path_components[5];
                                     $id=Ai::findByName($name)->getID();
-                                  if($result=Game::findByAiID($start,$end,$id)!=null){
+                                    $result=Game::findByAiID($start,$end,$id);
+                                  if($result!=null){
                                          header("Content-type: application/json");
                                         print(json_encode($result));
                                         exit();
