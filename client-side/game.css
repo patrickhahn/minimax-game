@@ -89,22 +89,26 @@ h5{
 		margin: auto;
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 		z-index:9999;
-
       	 }
 
 #navbar a {
 
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		font-size: 19px;
-		margin: 70px;
+		margin: 6%;
 		color: white;
 		text-decoration: none;
-
 		}
 
 #navbar a:hover {
 	font-style: italic;
 	color: #C5CAE9;
+}
+
+#user{
+	float: right; 
+	position: relative;
+	margin-right: 7%;
 }
 
 
@@ -231,7 +235,7 @@ h6{
 /*rules*/
 
 #ruleset{
-	 margin-top: 160px;
+	 margin-top: 155px;
 	 background-color: #C5CAE9;
 	 width: 50%;
 	 text-align: left;
@@ -239,7 +243,7 @@ h6{
 	 box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
 	 padding: 15px;
 	 padding-right: 25px;
-	 margin-bottom: 30px;
+	 margin-bottom: 20px;
 	 border: thick solid #FF80AB;
 }
 
