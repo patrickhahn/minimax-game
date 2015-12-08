@@ -261,6 +261,52 @@ li{
 
 /* gameboard */
 
+.gameprof{
+	position: relative;
+	float: right;
+	background-color:#C5CAE9;
+	top: 250px;
+	margin-right: 20px;
+	width:300px;
+	height: 180px;
+	border-radius: 10px;
+	padding-left: 15px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.playerdiv{
+	position: relative;
+	float: left;
+	background-color:#C5CAE9;
+	top:250px; 
+	margin-left: 20px;
+	width:300px;
+	height: 180px;
+	border-radius: 10px;
+	padding-left: 15px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.gametitles{
+	float:left;
+	padding-left: 10px;
+	margin-top: 0;
+}
+
+
+.proftitles{
+	color: thin solid #EC407A;
+}
+
+.playergametitles{
+	color: thin solid #7986CB; 
+	
+}
+.class{
+	float: right; 
+	position: relative;
+}
+
 .cell {
   background-color:  #b5bce3;
   border: 1px solid #E8EAF6;
@@ -405,6 +451,13 @@ li{
 
 #topokmp{
 	background-image: url(topokmp.gif);
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#frosh{
+	background-image:url(nerd.jpg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
