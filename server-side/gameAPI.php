@@ -19,11 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
             if ($path_components[1] == "login")
             {
-                  $path_components[2]=$username;
-                  $path_components[3]=$password;
-                  if (Player::login($username,$passowrd)!=null) {
+                  $username=$path_components[2];
+                  $password=$path_components[3];
+                  if ($result=Player::login($username,$passowrd)!=null) {
                     header("Content-type: application/json");
-                    print(json_encode(Player::login($username,$passowrd)));
+                    print(json_encode($result));
                     exit();
                   }
                   else {
@@ -34,10 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             }
             if ($path_components[1] == "ai")
             {
-                  $path_components[2]=$name;
-                  if (Ai::findByName($name)!=null){
+                  $name=$path_components[2];
+                  if ($result=Ai::findByName($name)!=null){
                        header("Content-type: application/json");
-                       print(json_encode(Ai::findByName($name)));
+                       print(json_encode($result));
                        exit();
                  }
                  else {
@@ -61,16 +61,17 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             }
 
 } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
       if ((count($path_components) >= 2) &&
           ($path_components[1] != "")) {
 
       if ($path_components[1] == "login")
       {
-            $path_components[2]=$username;
-            $path_components[3]=$password;
-            if (Player::signUp($username,$passowrd)!=null) {
+            $username=$path_components[2];
+            $password=$path_components[3];
+            if ($reult=Player::signUp($username,$password)!=null) {
               header("Content-type: application/json");
-              print(json_encode(Player::signUp($username,$passowrd)));
+              print(json_encode($result));
               exit();
             }
             else {

@@ -42,7 +42,7 @@ class Ai
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $name=$mysqli->real_escape_string($name);
-                  $result = $mysqli->query("select * from Ai where name = " . $name);
+                  $result = $mysqli->query("select * from Ai where name = '" . $name."'");
                   if($result)
                   {
                         if ($result->num_rows == 0)
