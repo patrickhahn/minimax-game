@@ -272,6 +272,7 @@ li{
 	border-radius: 10px;
 	padding-left: 15px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+	border: thick solid #f25b8e;
 }
 
 .playerdiv{
@@ -283,6 +284,7 @@ li{
 	width:300px;
 	height: 180px;
 	border-radius: 10px;
+	border: thick solid #7986CB;
 	padding-left: 15px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
 }
@@ -295,11 +297,11 @@ li{
 
 
 .proftitles{
-	color: thin solid #EC407A;
+	color: #EC407A;
 }
 
-.playergametitles{
-	color: thin solid #7986CB; 
+.playergametitles {
+	color:  #7986CB; 
 	
 }
 .class{
