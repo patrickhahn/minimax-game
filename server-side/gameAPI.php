@@ -109,7 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
       {
             $username=$path_components[2];
             $password=$path_components[3];
-            if ($result=Player::signUp($username,$password)!=null) {
+            $result=Player::signUp($username,$password);
+            if ($result!=null) {
               header("Content-type: application/json");
               print(json_encode($result));
               exit();
