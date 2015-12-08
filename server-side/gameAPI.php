@@ -128,17 +128,19 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         }
         if ($path_components[1] == "game")
         {
-                $username=$path_components[2];
-                $password=$path_components[3];
-                $result=Player::signUp($username,$password);
+                $playerId=$path_components[2];
+                $aiId=$path_components[3];
+                $playerScore=$path_components[4];
+                $aiScore=$path_components[5];
+                $result=Game::create($playerId,$aiId,$playerScore,$aiScore);
                 if ($result!=null) {
                   header("Content-type: application/json");
                   print($result->getJSON());
                   exit();
                 }
                 else {
-                header("HTTP/1.0 400 Bad Request");
-               	print("Username is already taken");
+                header("HTTP/1.0 404 Bad Request");
+               	print("Something went wrong");
                	exit();
                 }
 
