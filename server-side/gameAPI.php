@@ -48,18 +48,58 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             }
             if ($path_components[1] =="leaderBoard")
             {
-                  if (Game::getRange(1,50)!=null)
-                       header("Content-type: application/json");
-                       print(json_encode(Game::signUp(1,50)));
-                       exit();
-                 }
-                  else{
-                        header("HTTP/1.0 404 Not Found");
-                        print("Leaderboard not found.");
-                        exit();
+                  if ($path_components[2] =="all")
+                  {
+                        $start=$path_components[3];
+                        $end=$path_components[4];
+                        if ($result=Game::getRange($start,$end)!=null){
+                             header("Content-type: application/json");
+                            print(json_encode($result));
+                            exit();
+                      }
+                        else{
+                              header("HTTP/1.0 404 Not Found");
+                              print("Leaderboard not found.");
+                              exit();
+                        }
                   }
-            }
+                        else if ($path_components[2] =="name")
+                        {
+                              $name=$path_components[3];
+                              $start=$path_components[4];
+                              $end=$path_components[5];
+                              $id=Player::findByUsername($name)->getID();
+                              if ($result=Game::findByUserID($start,$end,$id)!=null){
+                                   header("Content-type: application/json");
+                                  print(json_encode($result));
+                                  exit();
+                            }
+                              else{
+                                    header("HTTP/1.0 404 Not Found");
+                                    print("Leaderboard not found.");
+                                    exit();
+                              }
+                        }
+                        else if ($path_components[2] =="ai")
+                              {
+                                    $name=$path_components[3];
+                                    $start=$path_components[4];
+                                    $end=$path_components[5];
+                                    $id=Ai::findByName($name)->getID();
+                                  if($result=Game::findByAiID($start,$end,$id)!=null){
+                                         header("Content-type: application/json");
+                                        print(json_encode($result));
+                                        exit();
+                                  }
+                                    else{
+                                          header("HTTP/1.0 404 Not Found");
+                                          print("Leaderboard not found.");
+                                          exit();
+                                    }
+                        }
 
+      }
+}
 } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
       if ((count($path_components) >= 2) &&
@@ -80,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
            	exit();
             }
       }
-      /*if ($path_components[1] == "game")
+      if ($path_components[1] == "game")
       {
             $path_components[2]=$username;
             $path_components[3]=$password;
@@ -94,5 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
               print(json_encode(new Player(-1, null, null)));
               exit();
             }
-      }*/
+      }
+}
+}
 ?>
