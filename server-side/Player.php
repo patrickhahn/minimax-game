@@ -43,7 +43,7 @@ class Player
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $username=$mysqli->real_escape_string($username);
-                  $result = $mysqli->query("select * from Player where username = " . $username);
+                  $result = $mysqli->query("select * from Player where username = ''" . $username."'");
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -95,7 +95,7 @@ class Player
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $mysqli->real_escape_string($username);
                  $mysqli->real_escape_string($password);
-                  $result = $mysqli->query("select * from Player where username = " . $username . " and password = " . $password);
+                  $result = $mysqli->query("select * from Player where username = '" . $username . "' and password = '" . $password."'");
                   if($result->num_rows==0)
                   {
                         return null;
@@ -109,7 +109,7 @@ class Player
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $mysqli->real_escape_string($username);
                  $mysqli->real_escape_string($password);
-                  $result = $mysqli->query("select * from Player where username = " . $username);
+                  $result = $mysqli->query("select * from Player where username = '" . $username."'");
                   if($result->num_rows===0)
                   {
                         return Player::create($username,$password);
@@ -150,7 +150,7 @@ class Player
                   if ($this->authenticate($oldPassword))
                   {
                               $this->password=$newPassword;
-                              $result = $mysqli->query("update Player set password = " . $this->password . " where id = " . $this->id);
+                              $result = $mysqli->query("update Player set password = '" . $this->password . "'where id = " . $this->id);
                               return $result;
                   }
                   else
