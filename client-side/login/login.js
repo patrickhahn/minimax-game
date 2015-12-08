@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var url_base = "../server-side/";
+  var url_base = "../server-side/gameAPI.php/";
 
   $("#submitnew").click(function(e) {
     e.preventDefault();
@@ -21,14 +21,12 @@ $(document).ready(function() {
                   }
 	         });
     });
-
-    loginPlayer(url_base, username, password);
 });
 
 var loginPlayer = function (url_base, username, password) {
 
   $.ajax(url_base + "session.php/login",
-         {type: "GET",
+         {type: "POST",
                 success: function(result, status, jqXHR) {
                   console.log(result);
                 },
