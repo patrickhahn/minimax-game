@@ -144,7 +144,7 @@ input{
 	margin-top: 20px;
 	border-radius: 10px; 
 	height: 28px;
-	width: 230px;
+	width: 96%;
 	vertical-align: middle;
 	position: relative; 
 	border: thin solid #9FA8DA;
@@ -164,8 +164,8 @@ h6{
 	background-color: #7986CB; 
 	float: left;
 	position: relative;
-	margin-left: 250px;
-	width: 250px; 
+	left: 18%;
+	width: 25%; 
 	top: 228px;
 	clear:both;
 	margin-bottom:0; 
@@ -179,14 +179,14 @@ h6{
 
 #loginform {
 		position: relative; 
-		left: 250px;
+		left: 18%;
 		width: 400px; 
 		top:230px; 
 		clear: left; 
 		float: left; 
 		background-color: #C5CAE9;
 		margin:auto;
-		width: 250px; 
+		width: 25%; 
 		height: 150px;
 		padding: 10px;  
 		padding-bottom: 23px; 
@@ -200,9 +200,9 @@ h6{
 	background-color: #7986CB; 
 	float: right;
 	top: 146px;
-	margin-right: 250px; 
+	right: 18%; 
 	margin-bottom: 0;
-	width: 250px;
+	width: 25%;
 	padding: 10px;
 	height:50px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
@@ -218,10 +218,9 @@ h6{
 		background-color: #C5CAE9;
 		top: 46px; 
 		margin-top: 0;
-		margin-right: 50px;
+		right: 18%;
 		clear: both; 
-		right: 200px;
-		width: 250px; 
+		width: 25%; 
 		height: 150px;
 		padding: 10px;  
 		padding-bottom: 23px; 
