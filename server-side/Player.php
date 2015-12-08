@@ -117,7 +117,7 @@ class Player
                   return null;
             }
 
-            private function __construct($id, $username, $passowrd)
+            private function __construct($id, $username, $password)
             {
                   $this->id = $id;
                   $this->username = $username;
