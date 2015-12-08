@@ -136,7 +136,8 @@ h5{
 	box-shadow: none;
 }
 
-.submit:focus{outline:0;
+.submit:focus{
+	outline:0;
 }
 
 input{
@@ -162,10 +163,12 @@ h6{
 #loginheader{
 	background-color: #7986CB; 
 	float: left;
-	clear: both;
 	position: relative;
+	margin-left: 200px;
+	width: 400px; 
 	top: 230px;
-	margin-left: 180px;
+	clear:both;
+	margin-bottom:0; 
 	width: 250px;
 	padding: 10px;
 	height:50px;
@@ -176,11 +179,13 @@ h6{
 }
 #loginform {
 		position: relative; 
+		left: 200px;
+		width: 400px; 
+		top:230px; 
+		clear: left; 
+		float: left; 
 		background-color: #C5CAE9;
-		top: 230px; 
-		margin-left: 180px;
-		float: left;
-		clear: both;
+		margin:auto;
 		width: 250px; 
 		height: 150px;
 		padding: 10px;  
@@ -189,12 +194,14 @@ h6{
 		z-index:2; 
 }
 
+
 #signupheader{
-	background-color: #7986CB; 
-	float: right; 
 	position: relative;
+	background-color: #7986CB; 
+	float: right;
 	top: 148px;
-	margin-right: 180px;
+	margin-right: 250px; 
+	margin-bottom: 0;
 	width: 250px;
 	padding: 10px;
 	height:50px;
@@ -206,20 +213,21 @@ h6{
 
 
 #signupform{
-		position: relative; 
-		background-color: #C5CAE9;
-		top: 148px; 
-		margin-right: 180px;
+		position: relative;
 		float: right;
+		background-color: #C5CAE9;
+		top: 46px; 
+		margin-top: 0;
+		margin-right: 50px;
+		clear: both; 
+		right: 200px;
 		width: 250px; 
 		height: 150px;
 		padding: 10px;  
 		padding-bottom: 23px; 
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
 		z-index:2;
-
-}
-
+} 
 
 /* gameboard */
 
