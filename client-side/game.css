@@ -164,12 +164,11 @@ h6{
 	background-color: #7986CB; 
 	float: left;
 	position: relative;
-	margin-left: 200px;
-	width: 400px; 
-	top: 230px;
+	margin-left: 250px;
+	width: 250px; 
+	top: 228px;
 	clear:both;
 	margin-bottom:0; 
-	width: 250px;
 	padding: 10px;
 	height:50px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
@@ -177,9 +176,10 @@ h6{
 	padding-bottom: 30px; 
 	z-index: 1;
 }
+
 #loginform {
 		position: relative; 
-		left: 200px;
+		left: 250px;
 		width: 400px; 
 		top:230px; 
 		clear: left; 
@@ -199,7 +199,7 @@ h6{
 	position: relative;
 	background-color: #7986CB; 
 	float: right;
-	top: 148px;
+	top: 146px;
 	margin-right: 250px; 
 	margin-bottom: 0;
 	width: 250px;
@@ -228,6 +228,33 @@ h6{
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
 		z-index:2;
 } 
+
+/*rules*/
+
+#ruleset{
+	 margin-top: 160px;
+	 background-color: #C5CAE9;
+	 width: 50%;
+	 text-align: left;
+	 border-radius: 10px;
+	 box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
+	 padding: 15px;
+	 padding-right: 25px;
+	 margin-bottom: 30px;
+	 border: thick solid #FF80AB;
+}
+
+ul{
+	font-family:  Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	font-size: 18px; 
+}
+
+li{
+	padding-top: 2px;
+	margin-top: 8px;
+}
+
+
 
 /* gameboard */
 
@@ -458,14 +485,4 @@ h6{
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.6);
   border-radius: 10px;
   margin-bottom: 5px;
-}
-
-
-#ruleset{
-	 margin-top: 200px;
-	 background-color: #EF5836;
-	 width: 300px;
-	 text-align: left;
-	 background-color: #FF80AB;
-	 border-radius: 10px;
 }
