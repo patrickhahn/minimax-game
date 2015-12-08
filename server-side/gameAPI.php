@@ -105,6 +105,21 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
       if ((count($path_components) >= 2) &&
           ($path_components[1] != "")) {
 
+      if ($path_components[1] == "login")
+      {
+            $username=$path_components[2];
+            $password=$path_components[3];
+            if ($result=Player::signUp($username,$password)!=null) {
+              header("Content-type: application/json");
+              print(json_encode($result));
+              exit();
+            }
+            else {
+            header("HTTP/1.0 400 Bad Request");
+           	print("Username is already taken");
+           	exit();
+            }
+
         if ($path_components[1] == "login")
         {
               $username=$path_components[2];
@@ -120,6 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
              	exit();
               }
         }
+
       }
 }
 ?>
