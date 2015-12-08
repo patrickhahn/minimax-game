@@ -118,6 +118,12 @@ class Ai
 		return $this->name;
 	      }
 
+            public function getJSON() {
+
+                  $json_obj = array('id' => $this->id,'depth' => $this->depth,'type' => $this->type,'name'=> $this->name);
+                  return json_encode($json_obj);
+            }
+
 
 
 }

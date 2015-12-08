@@ -157,5 +157,11 @@ class Player
                   return false;
             }
 
+            public function getJSON() {
+
+                  $json_obj = array('id' => $this->id,'username' => $this->username,'password' => $this->password);
+                  return json_encode($json_obj);
+            }
+
 }
 ?>

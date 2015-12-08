@@ -175,5 +175,10 @@ class Game
             {
 		return $this->aiScore;
 	      }
+            public function getJSON() {
+
+                  $json_obj = array('id' => $this->id,'playerID' => $this->player,'aiID' => $this->ai,'playerScore' => $this->playerScore, 'aiScore' => $this->aiScore);
+                  return json_encode($json_obj);
+            }
 }
 ?>

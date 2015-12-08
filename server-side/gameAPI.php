@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                   $result=Player::login($username,$passowrd);
                   if ($result!=null) {
                     header("Content-type: application/json");
-                    print(json_encode($result));
+                    print($result->getJSON());
                     exit();
                   }
                   else {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                   $result=Ai::findByName($name);
                   if ($result!=null){
                        header("Content-type: application/json");
-                       print(json_encode($result));
+                       print($result->getJSON());
                        exit();
                  }
                  else {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                         $result=Game::getRange($start,$end);
                         if ($result!=null){
                              header("Content-type: application/json");
-                            print(json_encode($result));
+                            print($result->getJSON());
                             exit();
                       }
                         else{
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                               $result=Game::findByUserID($start,$end,$id);
                               if ($result!=null){
                                    header("Content-type: application/json");
-                                  print(json_encode($result));
+                                  print($result->getJSON());
                                   exit();
                             }
                               else{
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                                     $result=Game::findByAiID($start,$end,$id);
                                   if($result!=null){
                                          header("Content-type: application/json");
-                                        print(json_encode($result));
+                                        print($result->getJSON());
                                         exit();
                                   }
                                     else{
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
               $result=Player::signUp($username,$password);
               if ($result!=null) {
                 header("Content-type: application/json");
-                print(json_encode($result));
+                print($result->getJSON());
                 exit();
               }
               else {
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                 $result=Player::signUp($username,$password);
                 if ($result!=null) {
                   header("Content-type: application/json");
-                  print(json_encode($result));
+                  print($result->getJSON());
                   exit();
                 }
                 else {
