@@ -1,54 +1,97 @@
-
 <?php
-require_once 'API.class.php';
-require_once 'Ai.php';
-require_once 'Player.php';
-require_once 'Game.php';
-class gameAPI extends API
-{
+require_once('Ai.php');
+require_once('Player.php');
+require_once('Game.php');
 
+$path_components = explode('/', $_SERVER['PATH_INFO']);
 
-    public function __construct($request, $origin) {
-        parent::__construct($request);
+// Note that since extra path info starts with '/'
+// First element of path_components is always defined and always empty.
 
-    }
+if ($_SERVER['REQUEST_METHOD'] == "GET") {
+  // GET means either instance look up, index generation, or deletion
 
-     protected function ai($name) {
-        if ($this->method == 'GET') {
-             if (Ai::findByName($name)!=null)
-                  return Ai::findByName($name);
+  // Following matches instance URL in form
+  // /todo.php/<id>
+
+  if ((count($path_components) >= 2) &&
+      ($path_components[1] != "")) {
+
+            if ($path_components[1] == "login")
+            {
+                  $path_components[2]=$username;
+                  $path_components[3]=$password;
+                  if (Player::login($username,$passowrd)!=null) {
+                    header("Content-type: application/json");
+                    print(json_encode(Player::login($username,$passowrd)));
+                    exit();
+                  }
+                  else {
+                    header("Content-type: application/json");
+                    print(json_encode(new Player(-1, null, null)));
+                    exit();
+                  }
             }
-            return null;
-
-     }
-     protected function login($username,$password) {
-        if ($this->method == 'GET') {
-          if (Player::login($username,$passowrd)!=null) {
-            return Player::login($username,$passowrd);
-          }
-          else {
-            return new Player(-1, null, null);
-          }
-        }
-        else if ($this->method == 'POST') {
-          if (Player::signUp($username,$passowrd)!=null) {
-            print ("signup not null\n");
-            return Player::signUp($username,$passowrd);
-          }
-          else {
-            return new Player(-1, null, null);
-            print ("signup was null\n");
-          }
-        }
-     }
-
-     protected function leaderBoard() {
-        if ($this->method == 'GET') {
-             if (Game::getRange(1,50)!=null)
-                  return Game::signUp(1,50);
+            if ($path_components[1] == "ai")
+            {
+                  $path_components[2]=$name;
+                  if (Ai::findByName($name)!=null){
+                       header("Content-type: application/json");
+                       print(json_encode(Ai::findByName($name)));
+                       exit();
+                 }
+                 else {
+                       header("HTTP/1.0 404 Not Found");
+                       print("Ai name: " . $name . " not found.");
+                       exit();
+                 }
             }
-            return null;
+            if ($path_components[1] =="leaderBoard")
+            {
+                  if (Game::getRange(1,50)!=null)
+                       header("Content-type: application/json");
+                       print(json_encode(Game::signUp(1,50)));
+                       exit();
+                 }
+                  else{
+                        header("HTTP/1.0 404 Not Found");
+                        print("Leaderboard not found.");
+                        exit();
+                  }
+            }
 
-     }
- }
-//Guide at: http://coreymaynard.com/blog/creating-a-restful-api-with-php/
+} else if ($_SERVER['REQUEST_METHOD'] == "POST") {
+      if ((count($path_components) >= 2) &&
+          ($path_components[1] != "")) {
+
+      if ($path_components[1] == "login")
+      {
+            $path_components[2]=$username;
+            $path_components[3]=$password;
+            if (Player::signUp($username,$passowrd)!=null) {
+              header("Content-type: application/json");
+              print(json_encode(Player::signUp($username,$passowrd)));
+              exit();
+            }
+            else {
+            header("HTTP/1.0 400 Bad Request");
+           	print("Username is already taken");
+           	exit();
+            }
+      }
+      /*if ($path_components[1] == "game")
+      {
+            $path_components[2]=$username;
+            $path_components[3]=$password;
+            if (Player::login($username,$passowrd)!=null) {
+              header("Content-type: application/json");
+              print(json_encode(Player::login($username,$passowrd)));
+              exit();
+            }
+            else {
+              header("Content-type: application/json");
+              print(json_encode(new Player(-1, null, null)));
+              exit();
+            }
+      }*/
+?>
