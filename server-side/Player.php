@@ -29,12 +29,12 @@ class Player
                   {
                         if ($result->num_rows == 0)
                         {
-				return null;
-			      }
-			$player_info = $result->fetch_array();
-			return new Player($player_info['id'],
-					      $player_info['username'],
-					      $player_info['password']);
+				                    return null;
+			                  }
+			                  $player_info = $result->fetch_array();
+			                  return new Player($player_info['id'],
+					              $player_info['username'],
+					              $player_info['password']);
                   }
                   return null;
             }
@@ -43,17 +43,17 @@ class Player
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $username=$mysqli->real_escape_string($username);
-                  $result = $mysqli->query("select * from Player where username = ''" . $username."'");
+                  $result = $mysqli->query("select * from Player where username = '" . $username."'");
                   if($result)
                   {
                         if ($result->num_rows == 0)
                         {
-				return null;
-			      }
-			$player_info = $result->fetch_array();
-			return new Player($player_info['id'],
-					      $player_info['username'],
-					      $player_info['password']);
+				                    return null;
+			                  }
+			                  $player_info = $result->fetch_array();
+			                  return new Player($player_info['id'],
+					                                $player_info['username'],
+					                                $player_info['password']);
                   }
                   return null;
             }

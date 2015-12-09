@@ -144,7 +144,25 @@ Game.prototype.cpu_move = function () {
 
 Game.prototype.choose_cpu_move = function () {
   var move = this.agent.chooseMove(this.board);
+  if (move == null) {
+    move = this.getRandomEmptyCell();
+  }
   return move;
+};
+
+Game.prototype.getRandomEmptyCell = function () {
+  var cell = null;
+
+  while (cell == null) {
+    // Get random int between 0 and 36
+    var num = Math.min(36, Math.floor((Math.random() * 37)));
+    var column = Math.min(5, Math.floor(num / 6));
+    var row = num % 6;
+    if (this.board[column][row].owner == own.EMPTY) {
+      cell = this.board[column][row];
+    }
+  }
+  return cell;
 };
 
 Game.prototype.hasCellsRemaining = function () {
@@ -152,13 +170,15 @@ Game.prototype.hasCellsRemaining = function () {
     for (var x = 0; x < this.width; x++) {
       if (this.board[y][x].owner == own.EMPTY) {
         return true;
+      }
     }
   }
   return false;
-}
+};
 
 Game.prototype.finish = function () {
-  $.ajax(url_base + "gameAPI.php/game/" + this.playerName + "/" + this.aiName + "/" + this.player_score + "/" + this.cpu_score,
+  console.log(this.playerName, this.aiName, this.player_score, this.cpu_score);
+  $.ajax("../../server-side/gameAPI.php/game/" + this.playerName + "/" + this.aiName + "/" + this.player_score + "/" + this.cpu_score,
          {type: "POST",
                 dataType: "json",
                 success: function(game, status, jqXHR) {
@@ -170,7 +190,4 @@ Game.prototype.finish = function () {
                   console.log(error);
                 }
          });
-};
-
-
 };

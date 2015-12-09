@@ -17,7 +17,7 @@ $(document).ready(function(){
 	$(".professor").click(function(e){
 		var aiName = $(this).children().first().attr('id');
 
-		$.ajax(url_base + "gameAPI.php/ai/" + username + "/" + password,
+		$.ajax(url_base + "gameAPI.php/ai/" + aiName,
 	         {type: "GET",
                   dataType: "json",
 		              success: function(ai, status, jqXHR) {

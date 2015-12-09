@@ -141,9 +141,9 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                   exit();
                 }
                 else {
-                header("HTTP/1.0 404 Bad Request");
-               	print("Something went wrong");
-               	exit();
+                  header("HTTP/1.0 404 Bad Request");
+                 	print("Something went wrong");
+                 	exit();
                 }
 
         }
