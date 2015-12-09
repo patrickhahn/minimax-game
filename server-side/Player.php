@@ -20,7 +20,7 @@ class Player
                   return null;
             }
 
-            public static function find_byID ($id)
+            public static function findByID ($id)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $id=$mysqli->real_escape_string($id);
@@ -100,6 +100,7 @@ class Player
                   {
                         return null;
                   }
+                  $next_row = $result->fetch_row();
                   return Player::findByID($next_row[0]);
             }
 

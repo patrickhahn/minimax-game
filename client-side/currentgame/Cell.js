@@ -26,6 +26,8 @@ var Cell = function (game, x, y) {
     if (e.button == 0 && cell.game.player_turn && cell.owner == own.EMPTY) {
 
       cell.claim_for_player();
+      $(".playerdiv").children().first().html("");
+      $(".gameprof").children().first().html("<h3>Dr. " + cell.game.aiName + " is thinking...</h3>");
     }
   });
 

@@ -74,7 +74,7 @@ var Game = function(game_div, agent, name) {
   }
 
   $("#playerscore").html("You: " + 0);
-  $("#cpuscore").html("CPU: " + 0);
+  $("#cpuscore").html(name + ": " + 0);
 };
 
 Game.prototype.getCell = function (x, y) {
@@ -125,6 +125,9 @@ Game.prototype.update_score = function () {
 Game.prototype.cpu_move = function () {
   var move = this.choose_cpu_move();
   cell = this.board[move.y][move.x];
+
+  $(".gameprof").children().first().html("");
+  $(".playerdiv").children().first().html("<h3>Your turn</h3>");
 
   if (cell != null) {
     cell.cell_div.toggleClass('claimed', true);
@@ -178,16 +181,27 @@ Game.prototype.hasCellsRemaining = function () {
 
 Game.prototype.finish = function () {
   console.log(this.playerName, this.aiName, this.player_score, this.cpu_score);
-  $.ajax("../../server-side/gameAPI.php/game/" + this.playerName + "/" + this.aiName + "/" + this.player_score + "/" + this.cpu_score,
-         {type: "POST",
-                dataType: "json",
-                success: function(game, status, jqXHR) {
-                  console.log(game);
-                },
-                error: function(jqHXR, status, error) {
-                  console.log(jqHXR);
-                  console.log(status);
-                  console.log(error);
-                }
-         });
+  if (this.player_score > this.cpu_score) {
+    $(".playerdiv").children().first().html("<h3>Winner!</h3>");
+    $(".gameprof").children().first().html("");
+  }
+  else {
+    $(".playerdiv").children().first().html("");
+    $(".gameprof").children().first().html("<h3>Winner!</h3>");
+  }
+
+  if (this.playerName != null && this.playerName != "") {
+    $.ajax("../../server-side/gameAPI.php/game/" + this.playerName + "/" + this.aiName + "/" + this.player_score + "/" + this.cpu_score,
+           {type: "POST",
+                  dataType: "json",
+                  success: function(game, status, jqXHR) {
+                    console.log(game);
+                  },
+                  error: function(jqHXR, status, error) {
+                    console.log(jqHXR);
+                    console.log(status);
+                    console.log(error);
+                  }
+           });
+  }
 };

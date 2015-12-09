@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var url_base = "../server-side/";
 
+  // Sign Up
   $("#submitnew").click(function(e) {
     e.preventDefault();
     var username = $("#newUsername").val();
@@ -15,6 +16,32 @@ $(document).ready(function() {
                       loginPlayer(url_base, player.id, player.username, player.password);
                     } else {
                       console.log("Player id <= -1 or did not exist");
+                    }
+		              },
+                  error: function(jqHXR, status, error) {
+                    console.log(jqHXR);
+                    console.log(status);
+                    console.log(error);
+                  }
+	         });
+  });
+
+  // Log In
+  $("#submituser").click(function(e) {
+    e.preventDefault();
+    var username = $("#username").val();
+    var password = $("#password").val();
+    console.log(username,password);
+
+    $.ajax(url_base + "gameAPI.php/login/" + username + "/" + password,
+	         {type: "GET",
+                  dataType: "json",
+		              success: function(player, status, jqXHR) {
+		                console.log(player != false);
+                    if (player) {
+                      loginPlayer(url_base, player.id, player.username, player.password);
+                    } else {
+                      console.log("Player did not exist");
                     }
 		              },
                   error: function(jqHXR, status, error) {
