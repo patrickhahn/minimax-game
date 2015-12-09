@@ -17,8 +17,7 @@ h2{
 }
 
 h3 {
-	text-align: left;
-	float: right;
+	text-align: center;
 	position: relative;
 	padding-right: 50px;
 	font-size: 20px;
@@ -77,8 +76,7 @@ h5{
 
 #navbar {
 		position: fixed;
-		/*background-color: #303f9f;*/
-		background:url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
+		background-color: #303f9f;
 		top:70px;
 		left:0;
 		width: 100%;
@@ -108,6 +106,7 @@ h5{
 
 #user{
 	float: right;
+	top: 20px;
 	position: relative;
 	margin-right: 7%;
 }
@@ -266,14 +265,12 @@ li{
 	position: relative;
 	float: right;
 	background-color:#C5CAE9;
-	top: 250px;
+	top: 280px;
 	margin-right: 20px;
-	width:300px;
-	height: 180px;
 	border-radius: 10px;
-	padding-left: 15px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
 	border: thick solid #f25b8e;
+	padding: 10px;
 }
 
 .playerdiv{
@@ -281,37 +278,23 @@ li{
 	float: left;
 	clear: left;
 	background-color:#C5CAE9;
-	top:250px;
+	top:280px;
 	margin-left: 20px;
-	width:300px;
-	height: 180px;
 	border-radius: 10px;
 	border: thick solid #7986CB;
-	padding-left: 15px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+	padding: 10px;
 }
 
 .gametitles{
-	float:left;
-	padding-left: 10px;
-	margin-top: 0;
+	margin: auto;
+	vertical-align: middle;
 }
-
-#playerturn{
-	color: white;
-	position: relative;
-	top: 70px;
-}
-
 
 #profstatus{
 	color: white;
 	position: relative;
 	top: 22px;
-}
-
-.playergametitles {
-	color:  #7986CB;
 }
 
 .class{
