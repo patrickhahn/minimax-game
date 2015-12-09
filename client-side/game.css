@@ -77,7 +77,8 @@ h5{
 
 #navbar {
 		position: fixed;
-		background-color: #303f9f;
+		/*background-color: #303f9f;*/
+		background:url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
 		top:70px;
 		left:0;
 		width: 100%;
@@ -165,7 +166,8 @@ h6{
 }
 
 #loginheader{
-	background-color: #7986CB; 
+	/*background-color: #7986CB; */ 
+	background: url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
 	float: left;
 	position: relative;
 	left: 18%;
@@ -201,7 +203,8 @@ h6{
 
 #signupheader{
 	position: relative;
-	background-color: #7986CB; 
+	/*background-color: #7986CB; */
+	background: url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
 	float: right;
 	top: 146px;
 	right: 18%; 
@@ -314,7 +317,8 @@ li{
 }
 
 .cell {
-  background-color:  #b5bce3;
+  /*background-color:  #b5bce3;*/
+  background: url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
   border: 1px solid #E8EAF6;
   color: white;
   opacity: .87;
