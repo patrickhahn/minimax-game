@@ -12,9 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
   if ((count($path_components) >= 2) && ($path_components[1] == "login")) {
 
-    $json_obj = array('id' => $SESSION_['userId'],
-		      'username' => $SESSION_['username'],
-		      'password' => $SESSION_['password']);
+    $json_obj = array('id' => $_SESSION['userId'],
+		      'username' => $_SESSION['username'],
+		      'password' => $_SESSION['password']);
+
+    // $json_obj = array('sessionid' => _SESSIONid());
 
     header("Content-type: application/json");
     print(json_encode($json_obj));
@@ -22,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
   }
   else if ((count($path_components) >= 2) && ($path_components[1] == "ai")) {
 
-    $json_obj = array('id' => $SESSION_['aiId'],
-		      'depth' => $SESSION_['depth'],
-		      'type' => $SESSION_['type'],
-          'name' => $SESSION_['aiName']);
+    $json_obj = array('id' => $_SESSION['aiId'],
+		      'depth' => $_SESSION['depth'],
+		      'type' => $_SESSION['type'],
+          'name' => $_SESSION['aiName']);
 
     header("Content-type: application/json");
     print(json_encode($json_obj));
@@ -36,28 +38,30 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
   if ((count($path_components) >= 5) && ($path_components[1] == "login")) {
 
-    $SESSION_['userId'] = intval($path_components[2]);
-    $SESSION_['username'] = $path_components[3];
-    $SESSION_['password'] = $path_components[4];
+    $_SESSION['userId'] = intval($path_components[2]);
+    $_SESSION['username'] = $path_components[3];
+    $_SESSION['password'] = $path_components[4];
 
-    $json_obj = array('id' => $SESSION_['userId'],
-		      'username' => $SESSION_['username'],
-		      'password' => $SESSION_['password']);
+    $json_obj = array('id' => $_SESSION['userId'],
+		      'username' => $_SESSION['username'],
+		      'password' => $_SESSION['password']);
+
+    // $json_obj = array('sessionid' => _SESSIONid());
 
     header("Content-type: application/json");
     print(json_encode($json_obj));
     exit();
   }
   else if ((count($path_components) >= 6) && ($path_components[1] == "ai")) {
-    $SESSION_['aiId'] = intval($path_components[2]);
-    $SESSION_['aiName'] = $path_components[3];
-    $SESSION_['type'] = intval($path_components[4]);
-    $SESSION_['depth'] = intval($path_components[5]);
+    $_SESSION['aiId'] = intval($path_components[2]);
+    $_SESSION['aiName'] = $path_components[3];
+    $_SESSION['type'] = intval($path_components[4]);
+    $_SESSION['depth'] = intval($path_components[5]);
 
-    $json_obj = array('id' => $SESSION_['aiId'],
-          'depth' => $SESSION_['depth'],
-          'type' => $SESSION_['type'],
-          'name' => $SESSION_['aiName']);
+    $json_obj = array('id' => $_SESSION['aiId'],
+          'depth' => $_SESSION['depth'],
+          'type' => $_SESSION['type'],
+          'name' => $_SESSION['aiName']);
 
     header("Content-type: application/json");
     print(json_encode($json_obj));

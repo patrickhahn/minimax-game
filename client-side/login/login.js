@@ -23,7 +23,8 @@ $(document).ready(function() {
                     console.log(error);
                   }
 	         });
-    });
+  });
+
 });
 
 var loginPlayer = function (url_base, id, username, password) {
