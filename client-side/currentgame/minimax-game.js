@@ -21,29 +21,42 @@ $(document).ready(function() {
                 }
          });
 
-  var current_game = new Game($('#gameboard'), new AlphaBetaAgent(2));
+  $.ajax(url_base + "session.php/ai/",
+        {type: "GET",
+               dataType: "json",
+               success: function(ai, status, jqXHR) {
+                 console.log(ai);
+                 if (ai.type == 'alphabeta') {
+                   startGame(new AlphaBetaAgent(ai.depth), ai.name);
+                 } else if (ai.type == 'minimax') {
+                   startGame(new MinimaxAgent(ai.depth), ai.name);
+                 } else {
+                   console.log("Invalid AI type.");
+                 }
+               },
+               error: function(jqHXR, status, error) {
+                 console.log(jqHXR);
+                 console.log(status);
+                 console.log(error);
+               }
+        });
 
-  $("#reset").click(function(e) {
-    e.preventDefault();
-    reset_game();
-  });
-
-  var reset_game = function() {
-    if (current_game != null) {
-      current_game.kill();
-    }
-
-    current_game = new Game($('#gameboard'));
-  };
+  var startGame = function(agent, name) {
+    var current_game = new Game($('#gameboard'), agent, name);
+  }
 });
 
-var Game = function(game_div, agent) {
+var Game = function(game_div, agent, name) {
   this.game_div = game_div;
   this.width = 6;
   this.height = 6;
   this.killed = false;
   this.player_turn = true;
   this.agent = agent;
+  this.playerName = $('#user').text();
+  this.aiName = name;
+  this.player_score = 0;
+  this.cpu_scroe = 0;
 
   this.board = new Array(this.height);
 
@@ -103,7 +116,8 @@ Game.prototype.update_score = function () {
       }
     }
   }
-
+  this.player_score = p_score;
+  this.cpu_score = c_score;
   $("#playerscore").html("You: " + p_score);
   $("#cpuscore").html("CPU: " + c_score);
 };
@@ -116,9 +130,15 @@ Game.prototype.cpu_move = function () {
     cell.cell_div.toggleClass('claimed', true);
     cell.set_owner(own.CPU);
     this.update(cell);
-    this.player_turn = true;
-  } else {
-    this.finish();
+    if (this.hasCellsRemaining()) {
+      this.player_turn = true;
+    }
+    else {
+      this.finish();
+    }
+  }
+  else {
+    console.log("CPU could not choose a move.");
   }
 };
 
@@ -127,13 +147,30 @@ Game.prototype.choose_cpu_move = function () {
   return move;
 };
 
-Game.prototype.finish = function () {
+Game.prototype.hasCellsRemaining = function () {
+  for (var y = 0; y < this.height; y++) {
+    for (var x = 0; x < this.width; x++) {
+      if (this.board[y][x].owner == own.EMPTY) {
+        return true;
+    }
+  }
+  return false;
+}
 
+Game.prototype.finish = function () {
+  $.ajax(url_base + "gameAPI.php/game/" + this.playerName + "/" + this.aiName + "/" + this.player_score + "/" + this.cpu_score,
+         {type: "POST",
+                dataType: "json",
+                success: function(game, status, jqXHR) {
+                  console.log(game);
+                },
+                error: function(jqHXR, status, error) {
+                  console.log(jqHXR);
+                  console.log(status);
+                  console.log(error);
+                }
+         });
 };
 
-Game.prototype.kill = function () {
-  if (!this.killed) {
-    this.game_div.empty();
-    this.killed = true;
-  }
+
 };

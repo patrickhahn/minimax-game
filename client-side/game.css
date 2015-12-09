@@ -2,8 +2,8 @@ h2, label, p {
   font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   color: black;
   text-align: center;
-  vertical-align: middle; 
-  opacity: .87; 
+  vertical-align: middle;
+  opacity: .87;
 }
 
 h1{
@@ -36,7 +36,7 @@ h4 {
 h5{
 	font-size: 10;
 	text-align: left;
-	color: white;  
+	color: white;
 }
 
 body{
@@ -107,7 +107,7 @@ h5{
 }
 
 #user{
-	float: right; 
+	float: right;
 	position: relative;
 	margin-right: 7%;
 }
@@ -118,21 +118,21 @@ h5{
 .submit{
 		font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 		background-color: #F06292;
-		position: relative; 
+		position: relative;
 		margin: auto;
 		width: 120px;
 		height: 30px;
-		text-align: center; 
+		text-align: center;
 		border-radius: 30px;
 		border: thin solid #F48FB1;
-		color: white; 
+		color: white;
 		font-size: 15;
 		box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .submit:hover{
-	background-color:#fb72a0; 
-	font-style: italic; 
+	background-color:#fb72a0;
+	font-style: italic;
 	border: thin solid #fb72a0;
 	cursor:  pointer;
 }
@@ -147,74 +147,72 @@ h5{
 
 input{
 	margin-top: 20px;
-	border-radius: 10px; 
+	border-radius: 10px;
 	height: 28px;
 	width: 96%;
 	vertical-align: middle;
-	position: relative; 
+	position: relative;
 	border: thin solid #9FA8DA;
 }
 
 h6{
 	font-size: 23px;
 	text-align: left;
-	float: left; 
+	float: left;
 	position: relative;
-	color: white; 
+	color: white;
 	bottom: 25px;
 	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #loginheader{
-	/*background-color: #7986CB; */ 
-	background: url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
+	background-color: #7986CB;
 	float: left;
 	position: relative;
 	left: 18%;
-	width: 25%; 
+	width: 25%;
 	top: 228px;
 	clear:both;
-	margin-bottom:0; 
+	margin-bottom:0;
 	padding: 10px;
 	height:50px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
-	padding-top: 1px; 
-	padding-bottom: 30px; 
+	padding-top: 1px;
+	padding-bottom: 30px;
 	z-index: 1;
 }
 
 #loginform {
-		position: relative; 
+		position: relative;
 		left: 18%;
-		width: 400px; 
-		top:230px; 
-		clear: left; 
-		float: left; 
+		width: 400px;
+		top:230px;
+		clear: left;
+		float: left;
 		background-color: #C5CAE9;
 		margin:auto;
-		width: 25%; 
+		width: 25%;
 		height: 150px;
-		padding: 10px;  
-		padding-bottom: 23px; 
+		padding: 10px;
+		padding-bottom: 23px;
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
-		z-index:2; 
+		z-index:2;
 }
 
 
 #signupheader{
 	position: relative;
-	/*background-color: #7986CB; */
-	background: url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
+	background-color: #7986CB;
 	float: right;
 	top: 146px;
-	right: 18%; 
+	right: 18%;
 	margin-bottom: 0;
 	width: 25%;
 	padding: 10px;
 	height:50px;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
-	padding-top: 1px; 
-	padding-bottom: 30px; 
+	padding-top: 1px;
+	padding-bottom: 30px;
 	z-index: 1;
 }
 
@@ -223,17 +221,17 @@ h6{
 		position: relative;
 		float: right;
 		background-color: #C5CAE9;
-		top: 46px; 
+		top: 46px;
 		margin-top: 0;
 		right: 18%;
-		clear: both; 
-		width: 25%; 
+		clear: both;
+		width: 25%;
 		height: 150px;
-		padding: 10px;  
-		padding-bottom: 23px; 
+		padding: 10px;
+		padding-bottom: 23px;
 		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.46);
 		z-index:2;
-} 
+}
 
 /*rules*/
 
@@ -252,7 +250,7 @@ h6{
 
 ul{
 	font-family:  Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
-	font-size: 18px; 
+	font-size: 18px;
 }
 
 li{
@@ -283,7 +281,7 @@ li{
 	float: left;
 	clear: left;
 	background-color:#C5CAE9;
-	top:250px; 
+	top:250px;
 	margin-left: 20px;
 	width:300px;
 	height: 180px;
@@ -300,25 +298,29 @@ li{
 }
 
 #playerturn{
-	color: white; 
+	color: white;
 	position: relative;
 	top: 70px;
 }
 
+
 #profstatus{
-	color: white; 
+	color: white;
 	position: relative;
 	top: 22px;
 }
 
+.playergametitles {
+	color:  #7986CB;
+}
+
 .class{
-	float: right; 
+	float: right;
 	position: relative;
 }
 
 .cell {
-  /*background-color:  #b5bce3;*/
-  background: url(http://ak-hdl.buzzfed.com/static/2014-04/enhanced/webdr04/25/12/enhanced-16699-1398444064-21.jpg);
+  background-color:  #b5bce3;
   border: 1px solid #E8EAF6;
   color: white;
   opacity: .87;
@@ -346,7 +348,7 @@ li{
 	margin-left: 8px;
 	margin-top: 4px;
 }
-	
+
 #cpuscore{
 	text-align: right;
 	float: right;
@@ -375,91 +377,91 @@ li{
 
 /* professor bubbles for New Game page */
 
-#stotts{
+#Stotts{
 	  background: url(http://cs.sites.unc.edu/files/2013/12/stotts.jpeg);
 	  height: 150px;
 	  background-size:cover;
 	  background-repeat: no-repeat;
 }
 
-#dewan{
+#Dewan{
 	background: url(http://www.cs.unc.edu/~dewan/index_files/image002.jpg);
 	height: 150px;
 	background-size:cover;
 	background-repeat: no-repeat;
 }
 
-#baruah{
+#Baruah{
 	background: url(https://www.cs.unc.edu/~baruah/Pics/2009baruah1.jpg);
 	height: 150px;
 	background-size:cover;
 	background-repeat: no-repeat;
 }
 
-#singh{
+#Singh{
 	background: url(https://www.cs.unc.edu/~montek/images/100_5473.JPG);
 	height: 150px;
 	background-size:cover;
 	background-repeat: no-repeat;
 }
 
-#bishop{
+#Bishop{
 	background: url(http://www.cs.unc.edu/~gb/media/gb.png);
 	height: 150px;
 	background-size:cover;
 	background-repeat: no-repeat;
 }
 
-#pozefsky{
+#Pozefsky{
 	background: url(http://www.americas.datafest.net/_/rsrc/1384653839266/about/awards/D_Pozefsky.png);
 	height: 150px;
 	background-size:cover;
 	background-repeat: no-repeat;
 }
 
-#fuchs{
+#Fuchs{
 	background: url(http://www.cs.unc.edu/~fuchs//fuchs2011c.jpg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-#lastra{
+#Lastra{
 	background: url(http://cs.sites.unc.edu/files/2013/12/lastra.jpeg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-#jeffay{
+#Jeffay{
 	background: url(http://cs.unc.edu/files/2013/12/jeffay_kevin_cropped1-e1446652966504-wpcf_120x176.png);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-#turing{
+#Turing{
 	background: url(https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-#brooks{
+#Brooks{
 	background: url(http://www.cs.unc.edu/Events/News/VirtuousReality/brooks1.jpg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-#kmp{
+#KMP{
 	background: url(http://cs.sites.unc.edu/files/2013/12/Mayer-patel.jpeg);
 	height: 150px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-#topokmp{
+#PostTopoKMP{
 	background-image: url(topokmp.gif);
 	height: 150px;
 	background-size: cover;

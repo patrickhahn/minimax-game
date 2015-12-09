@@ -40,5 +40,5 @@ var loginPlayer = function (url_base, id, username, password) {
                   console.log(error);
                 }
          });
-  //window.location.href="./newgame/newgame.html";
+  window.location.href="./newgame/newgame.html";
 };

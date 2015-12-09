@@ -1,15 +1,15 @@
 AI Names in order from easiest to hardest:
 
-Paul Stotts (110)
-Prasun Dewan (401)
-Sanjoy Baruah (410)
-Montek Singh (411)
-Gary Bishop (funniest professor)
-Diane Pozefsky (director of undergraduate studies)
-Henry Fuchs (highest salary in dept.)
-Anselmo Lastra (former dept. chair)
-Kevin Jeffay (current dept. chair)
-Alan Turing (beat the Nazis)
-Fred Brooks (literally a god)
-KMP
-Bonus level: Post-Topo KMP
+Paul Stotts (110) - 0
+Prasun Dewan (401) - 0
+Sanjoy Baruah (410) - 0
+Montek Singh (411) - 1
+Gary Bishop (funniest professor) - 1
+Diane Pozefsky (director of undergraduate studies) - 1
+Henry Fuchs (highest salary in dept.) - 2
+Anselmo Lastra (former dept. chair) - 2
+Kevin Jeffay (current dept. chair) - 2
+Alan Turing (beat the Nazis) - 3
+Fred Brooks (literally a god) - 3
+KMP - 3
+Bonus level: Post-Topo KMP - 3

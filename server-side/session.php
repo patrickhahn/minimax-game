@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
   else if ((count($path_components) >= 6) && ($path_components[1] == "ai")) {
     $_SESSION['aiId'] = intval($path_components[2]);
     $_SESSION['aiName'] = $path_components[3];
-    $_SESSION['type'] = intval($path_components[4]);
+    $_SESSION['type'] = $path_components[4];
     $_SESSION['depth'] = intval($path_components[5]);
 
     $json_obj = array('id' => $_SESSION['aiId'],

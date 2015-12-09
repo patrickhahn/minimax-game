@@ -15,8 +15,37 @@ $(document).ready(function(){
          });
 
 	$(".professor").click(function(e){
+		var aiName = $(this).children().first().attr('id');
 
-		window.location.href="../currentgame/currentgame.html";
+		$.ajax(url_base + "gameAPI.php/ai/" + username + "/" + password,
+	         {type: "GET",
+                  dataType: "json",
+		              success: function(ai, status, jqXHR) {
+		                console.log(ai);
+                    registerAI(url_base, ai.id, ai.name, ai.type, ai.depth);
+		              },
+                  error: function(jqHXR, status, error) {
+                    console.log(jqHXR);
+                    console.log(status);
+                    console.log(error);
+                  }
+	         });
 	});
 
 });
+
+var registerAI = function (url_base, id, name, type, depth) {
+
+  $.ajax(url_base + "session.php/ai/" + id + "/" + name + "/" + type + "/" + depth,
+         {type: "POST",
+                success: function(result, status, jqXHR) {
+                  console.log(result);
+                },
+                error: function(jqHXR, status, error) {
+                  console.log(jqHXR);
+                  console.log(status);
+                  console.log(error);
+                }
+         });
+  window.location.href="../currentgame/currentgame.html";
+};
