@@ -128,10 +128,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
         }
         if ($path_components[1] == "game")
         {
-                $playerId=$path_components[2];
-                $aiId=$path_components[3];
+                $name=$path_components[2];
+                $aiName=$path_components[3];
                 $playerScore=$path_components[4];
                 $aiScore=$path_components[5];
+                $playerId=Player::findByUserName($name)->getID();
+                $aiId=Ai::findByName($aiName)->getID();
                 $result=Game::create($playerId,$aiId,$playerScore,$aiScore);
                 if ($result!=null) {
                   header("Content-type: application/json");
