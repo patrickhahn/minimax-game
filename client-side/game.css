@@ -144,6 +144,11 @@ h5{
 	outline:0;
 }
 
+input:focus{
+	outline:0;
+}
+
+
 input{
 	margin-top: 20px;
 	border-radius: 10px;
@@ -550,10 +555,10 @@ li{
 	font-size: 18px;
 }
 
-#games tr:nth-child(even) {
+#games tr:nth-child(even):not(#leaderheader) {
 		background: #C5CAE9;
 }
-#games tr:nth-child(odd) {
+#games tr:nth-child(odd):not(#leaderheader) {
 		background:#7986CB;
 }
 
@@ -566,6 +571,11 @@ li{
 }
 
 
+#leaderheader {
+	background-color: #171f72;
+	color: white;
+	font-weight: bold;
+}
 
 
 
