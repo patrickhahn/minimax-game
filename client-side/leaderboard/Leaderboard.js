@@ -20,7 +20,7 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function(games, status, jqXHR) {
                   console.log(games);
-									$("#games").append('<tr><td>Player</td><td>Player Score</td><td>Professor</td><td>Professor Score</td></tr>');
+									$("#games").append('<tr id="leaderheader"><td>Player</td><td>Player Score</td><td>Professor</td><td>Professor Score</td></tr>');
 									for (var i=0; i<games.length; i++) {
 			   						loadGameResult(games[i]);
 		       				}
