@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                        exit();
                  }
             }
-            if ($path_components[1] =="leaderBoard")
+            if ($path_components[1] =="leaderboard")
             {
                   if ($path_components[2] =="all")
                   {
@@ -56,8 +56,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                         $end=$path_components[4];
                         $result=Game::getRange($start,$end);
                         if ($result!=null){
-                             header("Content-type: application/json");
-                            print($result->getJSON());
+                            $json_obj = array();
+                            for ($i = 0; $i < count($result); $i++) {
+                              $json_obj[$i] = $result[$i]->getJSON();
+                            }
+
+                            header("Content-type: application/json");
+                            print(json_encode($json_obj));
                             exit();
                       }
                         else{

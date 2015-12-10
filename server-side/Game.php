@@ -24,11 +24,11 @@ class Game
                   return null;
             }
 
-            public static function find_byID ($id)
+            public static function findByID ($id)
             {
                   $mysqli= new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
                   $id=$mysqli->real_escape_string($id);
-                  $result = $mysqli->query("select * from Game where id = " . $id);
+                  $result = $mysqli->query("select G.id as id, P.username as player, A.name as ai, G.playerScore as playerScore, G.aiScore as aiScore from Game G, Player P, Ai A where G.playerId=P.id and G.aiId=A.id and G.id= " . $id);
                   if($result)
                   {
                         if ($result->num_rows == 0)
@@ -50,17 +50,17 @@ class Game
 			if ($end > $start) {
 				return null;
 			}
-			$direction = "DESC";
+			$direction = "ASC";
 			$start *= -1;
 			$end *= -1;
 		} else {
 			if ($end < $start) {
 				return null;
 			}
-			$direction = "ASC";
+			$direction = "DESC";
 		}
             $mysqli = new mysqli("classroom.cs.unc.edu", "zrkaplan", "KMP4president", "zrkaplandb");
-		$result = $mysqli->query("select id from Games order by id " . $direction);
+		$result = $mysqli->query("select id from Game order by playerScore " . $direction . " limit 50");
 		$games = array();
 
 		if ($result) {
@@ -177,7 +177,7 @@ class Game
 	      }
             public function getJSON() {
 
-                  $json_obj = array('id' => $this->id,'playerID' => $this->player,'aiID' => $this->ai,'playerScore' => $this->playerScore, 'aiScore' => $this->aiScore);
+                  $json_obj = array('id' => $this->id,'player' => $this->player,'ai' => $this->ai,'playerScore' => $this->playerScore, 'aiScore' => $this->aiScore);
                   return json_encode($json_obj);
             }
 }
