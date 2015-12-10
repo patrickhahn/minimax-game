@@ -1,6 +1,19 @@
 $(document).ready(function() {
   var url_base = "../server-side/";
 
+  $.ajax(url_base + "session.php/login/",
+         {type: "GET",
+                dataType: "json",
+                success: function(player, status, jqXHR) {
+                  $('#user').html(player.username);
+                },
+                error: function(jqHXR, status, error) {
+                  console.log(jqHXR);
+                  console.log(status);
+                  console.log(error);
+                }
+         });
+
   // Sign Up
   $("#submitnew").click(function(e) {
     e.preventDefault();
