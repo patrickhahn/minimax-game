@@ -537,3 +537,38 @@ li{
   border-radius: 10px;
   margin-bottom: 5px;
 }
+
+/* leaderboard */
+
+#games{
+	
+	position: relative;
+	margin: auto;
+	margin-bottom: 100px;
+	top: 150px;
+	width: 65%;
+	font-size: 18px;
+}
+
+#games tr:nth-child(even) {
+		background: #C5CAE9;
+}
+#games tr:nth-child(odd) {
+		background:#7986CB;
+}
+
+#games td{
+	border: thin solid #303f9f;
+	opacity: .87;
+	padding: 10px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
