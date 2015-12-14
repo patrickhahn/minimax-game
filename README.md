@@ -1,5 +1,9 @@
 # minimax-game
 
+This website was created by Patrick Hahn, Ali Schneider, and Zach Kaplan as our final project for COMP 426 (Advanced Web Programming) at UNC Chapel Hill. The user plays a simple board game against an AI opponent, which uses a minimax search algorithm with alpha-beta pruning to choose a move that maximizes its expected utility.
+
+I'm not sure how long this link will continue to work, as our Codiad workspaces will likely be cleared at some point after the end of the course, but for now the site can be accessed at http://wwwp.cs.unc.edu/Courses/comp426-f15/users/phahn/Codiad/workspace/cs426/final/client-side/index.html
+
 <h2>Guide to using git to work on this repository.</h2>
 
 https://xkcd.com/1597/
